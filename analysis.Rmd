@@ -1,0 +1,241 @@
+```{r setup, include=FALSE}
+# set global chunk options
+library(knitr)
+opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
+# import funtions
+source("functions.R")
+```
+
+Analysis of antibody titers from a bunch of donors
+========================================================
+## Data
+Data were loaded from several csv files (one per strain) and merged into two
+dataframes, one for IC50 values and one for the EC50 values.
+```{r load_data, echo=FALSE, warning=FALSE}
+library(plyr)
+library(reshape)
+# EC data
+filenames <- list.files(path="../../data/data_to_merge_EC50/", full.names=TRUE)
+import.list <- llply(filenames, read.csv, sep=";")
+ec_data <- merge_recurse(import.list, by="donorID")
+# IC data
+filenames <- list.files(path="../../data/data_to_merge_IC50/", full.names=TRUE)
+import.list <- llply(filenames, read.csv, sep=";")
+ic_data <- merge_recurse(import.list, by="donorID")
+```
+
+## Data cleaning
+IC_50 could not be computed for H5 and H7. For these two strains, rather than
+the inhibitory concentrations, the inhibition value at the first dilution is
+reported, expressed in percentage.
+
+EC50 data present two outliers (one in H2 and one in H4 titers): their value
+for effective concentration was lower than -40 (in log scale) and for this
+reason were removed.
+```{r clean_data, echo=TRUE}
+ec_data$H2_log[ec_data$H2_log < -40] <- NA
+ec_data$H4_log[ec_data$H4_log < -40] <- NA
+```
+
+The following plots show the distribution of values, one boxplot per strain.
+IC50 for H5 and H7 are shown separately because the scale is different
+(percentage).
+
+#### IC50
+```{r ic_boxplots}
+library(ggplot2)
+library(reshape)
+# boxplots on log scales
+m <- melt(ic_data[, -c(1, 8, 9)])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+# boxplots of percentages
+m <- melt(ic_data[, -c(1:7)])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+```
+#### EC50
+```{r ec_boxplots}
+# boxplots
+m <- melt(ec_data[, -1])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+```
+
+### Merge with donors data
+Donors data were taken from the file `donors_view.csv` in the `data/` directory.
+We excluded donors enrolled in the Novartis study, HIV positive and those for
+which the number of vaccinations is not defined.
+
+```{r merge_donors}
+donors_view <- read.csv("../../data/donors_view.csv", sep=";", quote="\"",
+                          header=TRUE, na.strings=c("NULL"))
+# excludes those enrolled in novartis study or hiv positive or
+# for which flushot is not defined
+# drop phone, email, shcs
+donors_view <- subset(donors_view, novartis_study == 'n' &
+  donors_view$hiv == 'n' & !is.na(flushot_avg), select=-c(phone, email, shcs))
+
+# capitalize sex
+donors_view$sex <- toupper(donors_view$sex)
+
+# define a binary variable for vaccinated
+donors_view$shot[donors_view$flushot_avg > 0] <- 'Vaccinated'
+donors_view$shot[donors_view$flushot_avg == 0] <- 'Non vaccinated'
+
+ic_data <- merge(ic_data, donors_view, by="donorID")
+ec_data <- merge(ec_data, donors_view, by="donorID")
+```
+We are left with 271 donors, 141 females and 130 males, for which we can plot
+the following characteristics.
+```{r age_dist}
+p <- ggplot(ec_data, aes(x=age, fill=sex)) +
+  geom_histogram(binwidth=5, alpha=0.9, position="dodge") +
+  ggtitle("Age distribution per gender")
+p
+```
+
+```{r vaccine_sex}
+p <- ggplot(ec_data, aes(x=sex, fill=shot)) + geom_histogram()
+  + ggtitle("Vaccinated and non vaccinated per gender")
+p
+table(ec_data$shot, ec_data$sex)
+```
+We show the boxplots again, limited to donors considered here.
+#### IC50
+```{r ic_boxplots_again}
+# boxplots on log scales
+m <- melt(ic_data[, 2:7])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+# boxplots of percentages
+m <- melt(ic_data[, 8:9])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+```
+#### EC50
+```{r ec_boxplots_again}
+# boxplots
+m <- melt(ec_data[, 2:10])
+p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
+p
+```
+
+----
+## Analysis of antibody titer
+In the following, we fit a robust linear model to the relation:
+antibody-titer vs. age. Lots of plots.
+
+### IC50
+
+```{r plot_ic50, dpi=96, message=FALSE}
+plot_antibody(ic_data, "H1_brisbane_log")
+plot_antibody(ic_data, "H1_PR8_log")
+plot_antibody(ic_data, "H2_log")
+plot_antibody(ic_data, "H3_brisbane_log")
+plot_antibody(ic_data, "H3_HK_log")
+plot_antibody(ic_data, "H4_log")
+plot_antibody(ic_data, "H5_1st_dil_percent")
+plot_antibody(ic_data, "H7_1st_dil_percent")
+```
+
+----
+
+### EC50
+```{r plot_ec50, dpi=96, message=FALSE}
+plot_antibody(ec_data, "H1_pdm09_log")
+plot_antibody(ec_data, "H1_PR8_log")
+plot_antibody(ec_data, "H12_log")
+plot_antibody(ec_data, "H2_log")
+plot_antibody(ec_data, "H3_log")
+plot_antibody(ec_data, "H4_log")
+plot_antibody(ec_data, "H5_log")
+plot_antibody(ec_data, "H7_vir_log")
+plot_antibody(ec_data, "H7_log")
+```
+
+----
+
+## Specific analysis of some strains
+In the following, we test if there is support for a breakpoint and,
+consequently, we fit a segmented/non segmented generalized linear model.
+For each strain, split in vaccinated and non vaccinated, we report the result
+of the hypothesis test, the plot and a summary of the fit.
+
+### IC50
+
+#### H1 Brisbane
+```{r ic_segm_h1_brisbane, message=TRUE}
+segmented_analysis(ic_data, "H1_brisbane_log", "Non vaccinated")
+segmented_analysis(ic_data, "H1_brisbane_log", "Vaccinated")
+```
+
+#### H1 PR8
+```{r ic_segm_h1_pr8, message=TRUE}
+segmented_analysis(ic_data, "H1_PR8_log", "Non vaccinated")
+segmented_analysis(ic_data, "H1_PR8_log", "Vaccinated")
+```
+
+#### H2
+```{r ic_segm_h2, message=TRUE}
+segmented_analysis(ic_data, "H2_log", "Non vaccinated")
+segmented_analysis(ic_data, "H2_log", "Vaccinated")
+```
+
+#### H3 Brisbane
+```{r ic_segm_h3_brisbane, message=TRUE}
+segmented_analysis(ic_data, "H3_brisbane_log", "Non vaccinated")
+segmented_analysis(ic_data, "H3_brisbane_log", "Vaccinated")
+```
+
+#### H3 Hong Kong
+```{r ic_segm_h3_hk, message=TRUE}
+segmented_analysis(ic_data, "H3_HK_log", "Non vaccinated")
+segmented_analysis(ic_data, "H3_HK_log", "Vaccinated")
+```
+
+
+### EC50
+
+#### H1 Brisbane
+```{r ec_segm_h1_pdm09, message=TRUE}
+segmented_analysis(ec_data, "H1_pdm09_log", "Non vaccinated")
+segmented_analysis(ec_data, "H1_pdm09_log", "Vaccinated")
+```
+
+#### H1 PR8
+```{r ec_segm_h1_pr8, message=TRUE}
+segmented_analysis(ec_data, "H1_PR8_log", "Non vaccinated")
+segmented_analysis(ec_data, "H1_PR8_log", "Vaccinated")
+```
+
+#### H2
+```{r ec_segm_h2, message=TRUE}
+segmented_analysis(ec_data, "H2_log", "Non vaccinated")
+segmented_analysis(ec_data, "H2_log", "Vaccinated")
+```
+
+#### H3 Brisbane
+```{r ec_segm_h3_, message=TRUE}
+segmented_analysis(ec_data, "H3_log", "Non vaccinated")
+segmented_analysis(ec_data, "H3_log", "Vaccinated")
+```
+
+## For now, analysis ending here. _19 March 2013_.
+
+----
+
+### H3
+The results on the EC50 show that there is an effect of both the age and the
+vaccination status.
+```{r h3_ec, echo=TRUE}
+ec_fit <- aov(H3_log ~ age + shot, data=ec_data)
+summary(ec_fit)
+```
+
+On the other hand, the IC50 data only show the effect of the age, without a
+difference between vaccinated and non vaccinated.
+```{r h3_ic, echo=TRUE}
+ic_fit <- aov(H3_HK_log ~ age + shot, data=ic_data)
+summary(ic_fit)
+```
