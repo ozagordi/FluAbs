@@ -121,6 +121,16 @@ p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
 p
 ```
 
+We observe a few strain with outliers: H1 pandemic 2009, H2 and H4. We remove
+the lowest observation on each strain.
+
+```{r remove_outliers_ec, echo=TRUE}
+ec_data$H1_pdm09_log[ec_data$H1_pdm09_log < 0] <- NA
+ec_data$H2_log[ec_data$H2_log < -3] <- NA
+ec_data$H4_log[ec_data$H4_log < -1.5] <- NA
+```
+
+
 ----
 ## Analysis of antibody titer
 In the following, we fit a robust linear model to the relation:
@@ -197,7 +207,7 @@ segmented_analysis(ic_data, "H3_HK_log", "Vaccinated")
 
 ### EC50
 
-#### H1 Brisbane
+#### H1 pandemic 2009
 ```{r ec_segm_h1_pdm09, message=TRUE}
 segmented_analysis(ec_data, "H1_pdm09_log", "Non vaccinated")
 segmented_analysis(ec_data, "H1_pdm09_log", "Vaccinated")
@@ -215,27 +225,26 @@ segmented_analysis(ec_data, "H2_log", "Non vaccinated")
 segmented_analysis(ec_data, "H2_log", "Vaccinated")
 ```
 
-#### H3 Brisbane
-```{r ec_segm_h3_, message=TRUE}
+#### H3
+```{r ec_segm_h3, message=TRUE}
 segmented_analysis(ec_data, "H3_log", "Non vaccinated")
 segmented_analysis(ec_data, "H3_log", "Vaccinated")
 ```
 
-## For now, analysis ending here. _19 March 2013_.
+### Specific segmented regression of IC50 for H2
+On IC50 for H2, the segmented regression gives a first segment that is very
+close to being horizontal. It might make sense to constrain its slope to zero
+to see if we gain power in estimating less coefficients.
+```{r constr_segm, echo=TRUE}
+fit_1 <- glm(H2_log ~ age, family=gaussian, subset=(shot=='Non vaccinated'),
+             data=ic_data)
+fit_seg_1 <- segmented(fit_1, seg.Z=~age, psi=list(age=33),
+                     control=seg.control(stop.if.error=TRUE))
+fit_1 <- update(fit_1, .~., -age)
+fit_seg_2 <- update(fit_seg_1)
+```
+
 
 ----
 
-### H3
-The results on the EC50 show that there is an effect of both the age and the
-vaccination status.
-```{r h3_ec, echo=TRUE}
-ec_fit <- aov(H3_log ~ age + shot, data=ec_data)
-summary(ec_fit)
-```
-
-On the other hand, the IC50 data only show the effect of the age, without a
-difference between vaccinated and non vaccinated.
-```{r h3_ic, echo=TRUE}
-ic_fit <- aov(H3_HK_log ~ age + shot, data=ic_data)
-summary(ic_fit)
-```
+## For now, analysis ending here. _21 March 2013_.
