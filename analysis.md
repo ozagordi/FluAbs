@@ -69,6 +69,18 @@ We show the boxplots again, limited to donors considered here.
 ![plot of chunk ec_boxplots_again](figure/ec_boxplots_again.png) 
 
 
+We observe a few strain with outliers: H1 pandemic 2009, H2 and H4. We remove
+the lowest observation on each strain.
+
+
+```r
+ec_data$H1_pdm09_log[ec_data$H1_pdm09_log < 0] <- NA
+ec_data$H2_log[ec_data$H2_log < -3] <- NA
+ec_data$H4_log[ec_data$H4_log < -1.5] <- NA
+```
+
+
+
 ----
 ## Analysis of antibody titer
 In the following, we fit a robust linear model to the relation:
@@ -980,7 +992,7 @@ antibody-titer vs. age. Lots of plots.
 
 ----
 
-## Specific analysis of some strains
+## Specific analysis of some strains: segmented regression
 In the following, we test if there is support for a breakpoint and,
 consequently, we fit a segmented/non segmented generalized linear model.
 For each strain, split in vaccinated and non vaccinated, we report the result
@@ -1375,7 +1387,7 @@ of the hypothesis test, the plot and a summary of the fit.
 
 ### EC50
 
-#### H1 Brisbane
+#### H1 pandemic 2009
 
 ```
 ## [1] "Significance of the break: p-value"
@@ -1597,7 +1609,7 @@ of the hypothesis test, the plot and a summary of the fit.
 ```
 
 
-#### H3 Brisbane
+#### H3
 
 ```
 ## [1] "Significance of the break: p-value"
@@ -1606,7 +1618,7 @@ of the hypothesis test, the plot and a summary of the fit.
 ##        21
 ```
 
-![plot of chunk ec_segm_h3_](figure/ec_segm_h3_1.png) ![plot of chunk ec_segm_h3_](figure/ec_segm_h3_2.png) 
+![plot of chunk ec_segm_h3](figure/ec_segm_h31.png) ![plot of chunk ec_segm_h3](figure/ec_segm_h32.png) 
 
 ```
 ## 
@@ -1645,7 +1657,7 @@ of the hypothesis test, the plot and a summary of the fit.
 ##        72
 ```
 
-![plot of chunk ec_segm_h3_](figure/ec_segm_h3_3.png) ![plot of chunk ec_segm_h3_](figure/ec_segm_h3_4.png) 
+![plot of chunk ec_segm_h3](figure/ec_segm_h33.png) ![plot of chunk ec_segm_h3](figure/ec_segm_h34.png) 
 
 ```
 ## 
@@ -1674,44 +1686,80 @@ of the hypothesis test, the plot and a summary of the fit.
 ```
 
 
-## For now, analysis ending here. _19 March 2013_.
+### Specific segmented regression of IC50 for H2
+On IC50 for H2, the segmented regression gives a first segment that is very
+close to being horizontal. It might make sense to constrain its slope to zero
+to see if we gain power in estimating less coefficients.
+
+```r
+fit_1 <- glm(H2_log ~ age, family = gaussian, subset = (shot == "Non vaccinated"), 
+    data = ic_data)
+fit_seg_1 <- segmented(fit_1, seg.Z = ~age, psi = list(age = 33), control = seg.control(stop.if.error = TRUE))
+```
+
+```
+## Error: only 1 datum in an interval: breakpoint(s) at the boundary or too
+## close each other
+```
+
+```r
+fit_1 <- update(fit_1, . ~ ., -age)
+fit_seg_2 <- update(fit_seg_1)
+```
+
+```
+## Error: object 'fit_seg_1' not found
+```
+
 
 ----
 
-### H3
-The results on the EC50 show that there is an effect of both the age and the
-vaccination status.
+## Specific analysis of some strains: smoothing
+Since the segmented regression gives very erratic results, we try a
+non-parametric regression (_i.e._ we perform smoothing).
 
-```r
-ec_fit <- aov(H3_log ~ age + shot, data = ec_data)
-summary(ec_fit)
-```
 
 ```
-##              Df Sum Sq Mean Sq F value  Pr(>F)    
-## age           1    2.3   2.325    10.0 0.00174 ** 
-## shot          1    2.7   2.688    11.6 0.00077 ***
-## Residuals   268   62.2   0.232                    
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 /Multistart 1 of 1 |Multistart 1 of 1 |
 ```
 
-
-On the other hand, the IC50 data only show the effect of the age, without a
-difference between vaccinated and non vaccinated.
-
-```r
-ic_fit <- aov(H3_HK_log ~ age + shot, data = ic_data)
-summary(ic_fit)
-```
+![plot of chunk smooth_ic](figure/smooth_ic1.png) 
 
 ```
-##              Df Sum Sq Mean Sq F value Pr(>F)    
-## age           1   29.9   29.88  135.89 <2e-16 ***
-## shot          1    0.0    0.00    0.01   0.91    
-## Residuals   259   57.0    0.22                   
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
-## 9 observations deleted due to missingness
+## Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 /Multistart 1 of 1 |Multistart 1 of 1 |
 ```
 
+![plot of chunk smooth_ic](figure/smooth_ic2.png) 
+
+```
+## Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 /Multistart 1 of 1 |Multistart 1 of 1 |
+```
+
+![plot of chunk smooth_ic](figure/smooth_ic3.png) 
+
+```
+## Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 |Multistart 1 of 1 /Multistart 1 of 1 |Multistart 1 of 1 |
+```
+
+![plot of chunk smooth_ic](figure/smooth_ic4.png) 
+
+
+
+
+
+## Prediction
+First of all, it might be instructive to look at a matrix scatterplot of all
+data. Here below they plots, separated by group just to reduce cluttering.
+### IC50
+![plot of chunk pairs_ic](figure/pairs_ic1.png) ![plot of chunk pairs_ic](figure/pairs_ic2.png) 
+
+
+### EC50
+![plot of chunk pairs_ec](figure/pairs_ec1.png) ![plot of chunk pairs_ec](figure/pairs_ec2.png) 
+
+
+
+
+----
+
+## _For now, analysis ending here: 25 March 2013_.

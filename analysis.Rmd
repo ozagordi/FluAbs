@@ -166,7 +166,7 @@ plot_antibody(ec_data, "H7_log")
 
 ----
 
-## Specific analysis of some strains
+## Specific analysis of some strains: segmented regression
 In the following, we test if there is support for a breakpoint and,
 consequently, we fit a segmented/non segmented generalized linear model.
 For each strain, split in vaccinated and non vaccinated, we report the result
@@ -244,7 +244,49 @@ fit_1 <- update(fit_1, .~., -age)
 fit_seg_2 <- update(fit_seg_1)
 ```
 
+----
+
+## Specific analysis of some strains: smoothing
+Since the segmented regression gives very erratic results, we try a
+non-parametric regression (_i.e._ we perform smoothing).
+
+```{r smooth_ic, echo=FALSE, warning=FALSE}
+plot_cv_smoothed(ic_data, "H1_brisbane_log", "Non vaccinated")
+plot_cv_smoothed(ic_data, "H1_brisbane_log", "Vaccinated")
+
+plot_cv_smoothed(ic_data, "H2_log", "Non vaccinated")
+plot_cv_smoothed(ic_data, "H2_log", "Vaccinated")
+```
+
+
+
+
+## Prediction
+First of all, it might be instructive to look at a matrix scatterplot of all
+data. Here below they plots, separated by group just to reduce cluttering.
+### IC50
+```{r pairs_ic}
+library(car)
+scatterplotMatrix( ~ H1_brisbane_log + H1_PR8_log + H2_log,
+                   data=ic_data, smoother.args=list(span=0.5), main="Group 1")
+
+scatterplotMatrix( ~ H3_brisbane_log + H3_HK_log + H4_log,
+                   data=ic_data, smoother.args=list(span=0.5), main="Group 2")
+
+```
+
+### EC50
+```{r pairs_ec}
+scatterplotMatrix( ~ H1_PR8_log + H1_pdm09_log + H2_log + H12_log + H5_log,
+                   data=ec_data, smoother.args=list(span=0.5), main="Group 1")
+
+scatterplotMatrix( ~ H3_log + H4_log + H7_log + H7_vir_log,
+                   data=ec_data, smoother.args=list(span=0.5), main="Group 2")
+
+```
+
+
 
 ----
 
-## For now, analysis ending here. _21 March 2013_.
+## _For now, analysis ending here: 25 March 2013_.
