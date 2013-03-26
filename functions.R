@@ -130,11 +130,17 @@ cv_bws_npreg <- function(x, y, bandwidths=(1:50)/50, num.folds=10) {
 plot_cv_smoothed <- function(ab_data, strain, vac_status){
   library(np)
   mask <- ab_data$shot == vac_status
+  ymin <- min(ab_data[[strain]][mask], na.rm=TRUE)
+  ymax <- max(ab_data[[strain]][mask], na.rm=TRUE)
+  delta <- ymax - ymin
+  ymin <- ymin - 0.05 * delta
+  ymax <- ymax - 0.05 * delta
   bw <- npregbw(formula=as.formula(paste(c(strain, "age"), collapse=" ~ ")),
                 data=ab_data, subset=ab_data$shot==vac_status)
   fit.sm <- npreg(bws=bw)
-  plot(bw, plot.errors.method="bootstrap", col="#56B4E9", main=vac_status)
+  plot(bw, plot.errors.method="bootstrap", random.seed=1234,
+       col="#56B4E9", main=vac_status, ylim=c(ymin, ymax))
   points(ab_data$age[mask], ab_data[[strain]][mask],
          pch=16, cex=.75, col="#E69F00")
 }
-#plot_cv_smoothed(ec_data, "H3_log", 'Non vaccinated')
+#plot_cv_smoothed(ec_data, "H1_pdm09_log", 'Non vaccinated')
