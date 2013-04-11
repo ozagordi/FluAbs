@@ -16,8 +16,6 @@ Analysis of antibody titers from a bunch of donors
 
     [Linear regression](#rlm_fit)
     
-    [Segmented regression](#seg_fit)
-    
     [Smoothing](#smooth_fit)
 * [Prediction](#pred)
 * [Test H2 vaccinated vs. non vaccinated](#test_h2)
@@ -116,8 +114,26 @@ p
 p <- ggplot(ec_data, aes(x=sex, fill=shot)) + geom_histogram()
   + ggtitle("Vaccinated and non vaccinated per gender")
 p
+
 table(ec_data$shot, ec_data$sex)
+
+p <- ggplot(ec_data, aes(x=age, fill=shot)) +
+  geom_histogram(binwidth=5, alpha=0.9, position="dodge") +
+  ggtitle("Age distribution per vaccination status")
+p
+
 ```
+
+It is important to point out that the groups are not homogeneous, vaccinated
+are older than non vaccinated, as seen in the plot below.
+
+```{r vaccine_age}
+p <- ggplot(ec_data, aes(x=shot, y=age)) + geom_boxplot()
+  + ggtitle("Age distribution per vaccination status")
+p
+```
+
+
 We show the boxplots again, limited to donors considered here.
 #### IC50
 ```{r ic_boxplots_again}
@@ -130,6 +146,12 @@ m <- melt(ic_data[, 8:9])
 p <- ggplot(m, aes(x=variable, y=value)) + geom_boxplot()
 p
 ```
+
+H3 Brisbane has a few outliers: we remove those below zero.
+```{r remove_outliers_ic, echo=TRUE}
+ic_data$H3_brisbane_log[ic_data$H3_brisbane_log < 0] <- NA
+```
+
 #### EC50
 ```{r ec_boxplots_again}
 # boxplots
@@ -184,87 +206,6 @@ plot_antibody(ec_data, "H7_log")
 
 ----
 
-<a id="seg_fit"></a>
-## Specific analysis of some strains: segmented regression
-In the following, we test if there is support for a breakpoint and,
-consequently, we fit a segmented/non segmented generalized linear model.
-For each strain, split in vaccinated and non vaccinated, we report the result
-of the hypothesis test, the plot and a summary of the fit.
-
-### IC50
-
-#### H1 Brisbane
-```{r ic_segm_h1_brisbane, message=TRUE}
-segmented_analysis(ic_data, "H1_brisbane_log", "Non vaccinated")
-segmented_analysis(ic_data, "H1_brisbane_log", "Vaccinated")
-```
-
-#### H1 PR8
-```{r ic_segm_h1_pr8, message=TRUE}
-segmented_analysis(ic_data, "H1_PR8_log", "Non vaccinated")
-segmented_analysis(ic_data, "H1_PR8_log", "Vaccinated")
-```
-
-#### H2
-```{r ic_segm_h2, message=TRUE}
-segmented_analysis(ic_data, "H2_log", "Non vaccinated")
-segmented_analysis(ic_data, "H2_log", "Vaccinated")
-```
-
-#### H3 Brisbane
-```{r ic_segm_h3_brisbane, message=TRUE}
-segmented_analysis(ic_data, "H3_brisbane_log", "Non vaccinated")
-segmented_analysis(ic_data, "H3_brisbane_log", "Vaccinated")
-```
-
-#### H3 Hong Kong
-```{r ic_segm_h3_hk, message=TRUE}
-segmented_analysis(ic_data, "H3_HK_log", "Non vaccinated")
-segmented_analysis(ic_data, "H3_HK_log", "Vaccinated")
-```
-
-
-### EC50
-
-#### H1 pandemic 2009
-```{r ec_segm_h1_pdm09, message=TRUE}
-segmented_analysis(ec_data, "H1_pdm09_log", "Non vaccinated")
-segmented_analysis(ec_data, "H1_pdm09_log", "Vaccinated")
-```
-
-#### H1 PR8
-```{r ec_segm_h1_pr8, message=TRUE}
-segmented_analysis(ec_data, "H1_PR8_log", "Non vaccinated")
-segmented_analysis(ec_data, "H1_PR8_log", "Vaccinated")
-```
-
-#### H2
-```{r ec_segm_h2, message=TRUE}
-segmented_analysis(ec_data, "H2_log", "Non vaccinated")
-segmented_analysis(ec_data, "H2_log", "Vaccinated")
-```
-
-#### H3
-```{r ec_segm_h3, message=TRUE}
-segmented_analysis(ec_data, "H3_log", "Non vaccinated")
-segmented_analysis(ec_data, "H3_log", "Vaccinated")
-```
-
-### Specific segmented regression of IC50 for H2
-On IC50 for H2, the segmented regression gives a first segment that is very
-close to being horizontal. It might make sense to constrain its slope to zero
-to see if we gain power in estimating less coefficients.
-```{r constr_segm, echo=TRUE}
-fit_1 <- glm(H2_log ~ age, family=gaussian, subset=(shot=='Non vaccinated'),
-             data=ic_data)
-fit_seg_1 <- segmented(fit_1, seg.Z=~age, psi=list(age=33),
-                     control=seg.control(stop.if.error=TRUE))
-fit_1 <- update(fit_1, .~., -age)
-fit_seg_2 <- update(fit_seg_1)
-```
-
-----
-
 <a id="smooth_fit"></a>
 ## Specific analysis of some strains: smoothing
 Since the segmented regression gives very erratic results, we try a
@@ -272,7 +213,7 @@ non-parametric regression (_i.e._ we perform smoothing).
 
 ### IC50
 ```{r smooth_ic, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
-for (st in names(ic_data)[2:6]){
+for (st in names(ic_data)[2:9]){
   plot_cv_smoothed(ic_data, st, "Non vaccinated")
   plot_cv_smoothed(ic_data, st, "Vaccinated")
 }
@@ -280,7 +221,8 @@ for (st in names(ic_data)[2:6]){
 
 ### EC50
 ```{r smooth_ec, echo=FALSE, warning=FALSE}
-for (st in c("H1_pdm09_log", "H1_PR8_log", "H2_log", "H3_log")){
+for (st in c("H1_pdm09_log", "H1_PR8_log", "H2_log", "H3_log", "H4_log",
+             "H5_log", "H7_vir_log", "H7_log", "H12_log")){
   plot_cv_smoothed(ec_data, st, "Non vaccinated")
   plot_cv_smoothed(ec_data, st, "Vaccinated")
 }
@@ -347,6 +289,8 @@ consequence, the vaccination gives a positive contribution to the EC50 only
 for donors older than 36. Overall, we don't observe a clear and univoque
 contribution from the vaccination, while the effect of the age is clear.
 
+In conclusion, I would only consider the age as effective on the titer.
+
 ----
 
-## _Latest update: 26 March 2013_.
+## _Latest update: 3 April 2013_.

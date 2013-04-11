@@ -12,11 +12,11 @@ plot_antibody <- function(ab_data, strain){
   print("Fit on the vaccinated")
   print(summary(vac_fit))
   # Plot with rlm smoothing, tihs should be equivalent to glm 
-  p <- ggplot(data=melted, aes(x=age, y=value)) + geom_point(size=1.75)
+  p <- ggplot(data=melted, aes(x=age, y=value, color=shot)) + geom_point(size=1.75)
   # robust linear model
   p <- p + geom_smooth(method = "rlm")
   p <- p + ggtitle(strain)
-  p <- p + facet_grid(shot ~ .) + theme_bw()
+  p <- p + theme_bw()
   return(p)
 }
 
@@ -138,7 +138,7 @@ plot_cv_smoothed <- function(ab_data, strain, vac_status){
   bw <- npregbw(formula=as.formula(paste(c(strain, "age"), collapse=" ~ ")),
                 data=ab_data, subset=ab_data$shot==vac_status)
   fit.sm <- npreg(bws=bw)
-  plot(bw, plot.errors.method="bootstrap", random.seed=1234,
+  plot(bw, plot.errors.method="bootstrap", random.seed=12345,
        col="#56B4E9", main=vac_status, ylim=c(ymin, ymax))
   points(ab_data$age[mask], ab_data[[strain]][mask],
          pch=16, cex=.75, col="#E69F00")
