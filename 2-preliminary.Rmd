@@ -1,0 +1,14 @@
+```{r setup, include=FALSE}
+# set global chunk options
+library(knitr)
+opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
+# import funtions
+source("functions.R")
+load("ic_ec.Rdata")
+```
+
+Repeating the analysis done in STATA
+------------------------------------
+
+<a id="done_stata"></a>
+## 
