@@ -10,5 +10,15 @@ load("ic_ec.Rdata")
 Repeating the analysis done in STATA
 ------------------------------------
 
+
+```{r shot_categories}
+ic_data$ternary_shot <- rep(NA, length(ic_data$flushot_avg))
+ic_data$ternary_shot[ic_data$flushot_avg == 0] <- 'cat0'
+ic_data$ternary_shot[ic_data$flushot_avg >= 1 & ic_data$flushot_avg <= 3] <- 'cat1'
+ic_data$ternary_shot[ic_data$flushot_avg > 3] <- 'cat2'
+
+fit_H1_b <- aov(H1_brisbane_log ~ ternary_shot, data=ic_data)
+```
+
 <a id="done_stata"></a>
 ## 
