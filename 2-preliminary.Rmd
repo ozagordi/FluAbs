@@ -2,23 +2,138 @@
 # set global chunk options
 library(knitr)
 opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
-# import funtions
+# import functions
 source("functions.R")
 load("ic_ec.Rdata")
 ```
 
 Repeating the analysis done in STATA
 ------------------------------------
+### Divide the flu shots in categories, ANOVA for the antibody titers.
 
-
-```{r shot_categories}
-ic_data$ternary_shot <- rep(NA, length(ic_data$flushot_avg))
-ic_data$ternary_shot[ic_data$flushot_avg == 0] <- 'cat0'
-ic_data$ternary_shot[ic_data$flushot_avg >= 1 & ic_data$flushot_avg <= 3] <- 'cat1'
-ic_data$ternary_shot[ic_data$flushot_avg > 3] <- 'cat2'
-
-fit_H1_b <- aov(H1_brisbane_log ~ ternary_shot, data=ic_data)
+#### IC50
+We define categories for shots: no shots, between 1 and 3, more than 3.
+```{r define_shot_ternary_ic}
+ternary_shot <- rep(NA, length(ic_data$flushot_avg))
+ternary_shot[ic_data$flushot_avg == 0] <- 'cat0'
+ternary_shot[ic_data$flushot_avg >= 1 & ic_data$flushot_avg <= 3] <- 'cat1'
+ternary_shot[ic_data$flushot_avg > 3] <- 'cat2'
+ic_data$ternary_shot <- factor(ternary_shot)
 ```
+
+Here below whether different categories have different titers.
+
+```{r shot_categories, echo=TRUE}
+fit_H1_B <- aov(H1_brisbane_log ~ ternary_shot, data=ic_data)
+summary(fit_H1_B)
+
+fit_H1_P <- aov(H1_PR8_log ~ ternary_shot, data=ic_data)
+summary(fit_H1_P)
+
+fit_H2 <- aov(H2_log ~ ternary_shot, data=ic_data)
+summary(fit_H2)
+
+fit_H3_B <- aov(H3_brisbane_log ~ ternary_shot, data=ic_data)
+summary(fit_H3_B)
+
+fit_H3_H <- aov(H3_HK_log ~ ternary_shot, data=ic_data)
+summary(fit_H3_H)
+
+fit_H4 <- aov(H4_log ~ ternary_shot, data=ic_data)
+summary(fit_H4)
+```
+
+#### EC50
+Same as above 
+```{r define_shot_ternary_ec}
+# Obviously the shots must match
+all(ec_data$flushot_avg == ic_data$flushot_avg)
+ec_data$ternary_shot <- factor(ternary_shot)
+```
+
+```{r shot_categories_ec, echo=TRUE}
+fit_H1_pdm <- aov(H1_pdm09_log ~ ternary_shot, data=ec_data)
+summary(fit_H1_pdm)
+
+fit_H1_PR8 <- aov(H1_PR8_log ~ ternary_shot, data=ec_data)
+summary(fit_H1_PR8)
+
+fit_H12 <- aov(H12_log ~ ternary_shot, data=ec_data)
+summary(fit_H12)
+
+fit_H2 <- aov(H2_log ~ ternary_shot, data=ec_data)
+summary(fit_H2)
+
+fit_H3 <- aov(H3_log ~ ternary_shot, data=ec_data)
+summary(fit_H3)
+
+fit_H4 <- aov(H4_log ~ ternary_shot, data=ec_data)
+summary(fit_H4)
+
+fit_H5 <- aov(H5_log ~ ternary_shot, data=ec_data)
+summary(fit_H5)
+
+fit_H7_vir <- aov(H7_vir_log ~ ternary_shot, data=ec_data)
+summary(fit_H7_vir)
+
+fit_H7 <- aov(H7_log ~ ternary_shot, data=ec_data)
+summary(fit_H7)
+```
+
+### Comment
+There is an effect of vaccinations pretty much everywhere. Exceptions are,  
+for the IC50:
+- H3 Brisbane (small effect),
+- H4.
+
+For the EC50 they are:
+- H12,
+- H3,
+- H4,
+- H7 virus,
+- H7.
+
+On the other hand we already knew it, since flu shots increase with age.
+```{r shots_vs_age, echo=TRUE}
+library(ggplot2)
+library(MASS)
+p <- ggplot(data=ic_data, aes(x=age, y=flushot_avg)) + geom_jitter()
+p <- p + geom_smooth(method="loess")
+p
+```
+
+Do titers increase with the shots alone? This is more difficult to see from a
+plot only. For example, the smoothing below shows a moderate increase of H2
+titer for a range of shuts between zero and ten.
+```{r titers_vs_shots, echo=TRUE}
+p <- ggplot(data=ic_data, aes(x=flushot_avg, H2_log)) + geom_jitter()
+p <- p + geom_smooth(method="loess")
+p
+```
+
+In my opinion, the correct way to discern the effect of age and vaccinations is
+to perform a regression with both terms and compare it to a regression with the
+age only. We do it for H2, IC50 data.
+
+```{r age_and_shots, echo=TRUE}
+fit_1 <- glm(H2_log ~ age, data=ic_data)
+summary(fit_1)
+
+fit_0 <- glm(H2_log ~ age + flushot_avg, data=ic_data)
+summary(fit_0)
+```
+Even the AIC (Akaike's Information Criterion) is higher for the model with the
+vaccinations (the lower AIC, the better).
+The coefficient for the shots is very close to zero, and can be removed without
+worries.
+
+### Regression for age categories, gender and episodes
+```{r regress_all}
+ fit_all <- glm(H2_log ~ episodes_avg + sex + age, data=ic_data)
+summary(fit_all)
+```
+
+
 
 <a id="done_stata"></a>
 ## 

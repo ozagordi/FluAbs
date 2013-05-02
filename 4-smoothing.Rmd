@@ -16,6 +16,32 @@ Since the segmented regression gives very erratic results, we try a
 non-parametric regression (_i.e._ we perform smoothing).
 
 ### IC50
+```{r smooth_ic_ggplot, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+range_here <- c(0, 4.7)
+plot_antibody(ic_data, "H1_brisbane_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ic_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ic_data, "H2_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ic_data, "H3_brisbane_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ic_data, "H3_HK_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ic_data, "H4_log", smooth_method="loess", yrange=range_here)
+```
+
+### EC50
+```{r smooth_ec_ggplot, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+range_here <- c(-1, 4.8)
+plot_antibody(ec_data, "H1_pdm09_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H2_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H3_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H4_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H5_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H7_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H7_vir_log", smooth_method="loess", yrange=range_here)
+plot_antibody(ec_data, "H12_log", smooth_method="loess", yrange=range_here)
+```
+
+
+### IC50
 ```{r smooth_ic, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 for (st in names(ic_data)[2:9]){
   plot_cv_smoothed(ic_data, st, "Non vaccinated")

@@ -1,20 +1,25 @@
 library(MASS)
 library(reshape)
 library(ggplot2)
-plot_antibody <- function(ab_data, strain){
+plot_antibody <- function(ab_data, strain,
+                          smooth_method="rlm", ymin=NA, ymax=NA, yrange){
   ab_data_2 <- ab_data[, c("donorID", "age", "shot", strain)]
   melted <- melt(ab_data_2, id=c("donorID", "age", "shot"))
-  # Fit and print the summary
-  novac_fit <- glm(value ~ age, data=melted, subset=(shot=='Non vaccinated'))
-  print("Fit on the non vaccinated")
-  print(summary(novac_fit))
-  vac_fit <- glm(value ~ age, data=melted, subset=(shot=='Vaccinated'))
-  print("Fit on the vaccinated")
-  print(summary(vac_fit))
-  # Plot with rlm smoothing, tihs should be equivalent to glm 
+  if(smooth_method == "rlm"){
+    # Fit and print the summary
+    novac_fit <- glm(value ~ age, data=melted, subset=(shot=='Non vaccinated'))
+    print("Fit on the non vaccinated")
+    print(summary(novac_fit))
+    vac_fit <- glm(value ~ age, data=melted, subset=(shot=='Vaccinated'))
+    print("Fit on the vaccinated")
+    print(summary(vac_fit))
+  }
+  # Plot with rlm smoothing, this should be equivalent to glm
+  # or with loess
   p <- ggplot(data=melted, aes(x=age, y=value, color=shot)) + geom_point(size=1.75)
   # robust linear model
-  p <- p + geom_smooth(method = "rlm")
+  p <- p + ylim(yrange)
+  p <- p + geom_smooth(method=smooth_method)
   p <- p + ggtitle(strain)
   p <- p + theme_bw()
   return(p)
@@ -144,3 +149,22 @@ plot_cv_smoothed <- function(ab_data, strain, vac_status){
          pch=16, cex=.75, col="#E69F00")
 }
 #plot_cv_smoothed(ec_data, "H1_pdm09_log", 'Non vaccinated')
+plot_cv_smoothed_ggplot <- function(ab_data, strain, ymin=0, ymax=5){
+  library(ggplot2)
+  ab_data_2 <- ab_data[, c("donorID", "age", "shot", strain)]
+  melted <- melt(ab_data_2, id=c("donorID", "age", "shot"))
+  # Fit and print the summary
+  novac_fit <- glm(value ~ age, data=melted, subset=(shot=='Non vaccinated'))
+  print("Fit on the non vaccinated")
+  print(summary(novac_fit))
+  vac_fit <- glm(value ~ age, data=melted, subset=(shot=='Vaccinated'))
+  print("Fit on the vaccinated")
+  print(summary(vac_fit))
+  # Plot with rlm smoothing, tihs should be equivalent to glm 
+  p <- ggplot(data=melted, aes(x=age, y=value, color=shot)) + geom_point(size=1.75)
+  # robust linear model
+  p <- p + geom_smooth(method = "loess")
+  p <- p + ggtitle(strain)
+  p <- p + theme_bw()
+  return(p) 
+}
