@@ -2,7 +2,7 @@ library(MASS)
 library(reshape)
 library(ggplot2)
 plot_antibody <- function(ab_data, strain,
-                          smooth_method="rlm", ymin=NA, ymax=NA, yrange){
+                          smooth_method="rlm", ymin=NA, ymax=NA, yrange=NA){
   ab_data_2 <- ab_data[, c("donorID", "age", "shot", strain)]
   melted <- melt(ab_data_2, id=c("donorID", "age", "shot"))
   if(smooth_method == "rlm"){
@@ -18,7 +18,9 @@ plot_antibody <- function(ab_data, strain,
   # or with loess
   p <- ggplot(data=melted, aes(x=age, y=value, color=shot)) + geom_point(size=1.75)
   # robust linear model
-  p <- p + ylim(yrange)
+  if (!is.na(yrange)){
+    p <- p + ylim(yrange)
+  }
   p <- p + geom_smooth(method=smooth_method)
   p <- p + ggtitle(strain)
   p <- p + theme_bw()

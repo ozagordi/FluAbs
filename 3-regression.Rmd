@@ -6,7 +6,7 @@ opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
 source("functions.R")
 load("ic_ec.Rdata")
 ```
-
+  
 Regression of antibody titer vs. age
 ------------------------------------
 
@@ -47,4 +47,20 @@ plot_antibody(ec_data, "H7_log", smooth_method="rlm", yrange=range_here)
 plot_antibody(ec_data, "H12_log", smooth_method="rlm", yrange=range_here)
 ```
 
-## _Latest update: 27 April 2013_.
+----
+
+### Difference between IC50 and EC50, vs age
+Her we plot the IC50 value minus EC50 vs. age and a loess smoothing.
+```{r merge_and_delta, dpi=96}
+tmp <- merge(ic_data, ec_data, by="donorID")
+ic_ec_data <- data.frame(donorID=tmp$donorID, age=tmp$age.x, shot=tmp$shot.x)
+ic_ec_data$delta_H1_PR8 <- tmp$H1_PR8_log.x - tmp$H1_PR8_log.y
+ic_ec_data$delta_H2 <- tmp$H2_log.x - tmp$H2_log.y
+ic_ec_data$delta_H4 <- tmp$H4_log.x - tmp$H4_log.y
+rm(tmp)
+plot_antibody(ic_ec_data, "delta_H1_PR8", smooth_method="loess")
+plot_antibody(ic_ec_data, "delta_H2", smooth_method="loess")
+plot_antibody(ic_ec_data, "delta_H4", smooth_method="loess")
+```
+
+## _Latest update: 6 May 2013_.

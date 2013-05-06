@@ -1,5 +1,6 @@
-analysis.html
-analysis.md
+*.html
+*.md
+ic_ec.Rdata
 cache/
 figure/
 .Rproj.user
