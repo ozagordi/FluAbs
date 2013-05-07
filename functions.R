@@ -1,6 +1,7 @@
 library(MASS)
 library(reshape)
 library(ggplot2)
+myPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 plot_antibody <- function(ab_data, strain,
                           smooth_method="rlm", ymin=NA, ymax=NA, yrange=NA){
   ab_data_2 <- ab_data[, c("donorID", "age", "shot", strain)]
@@ -16,13 +17,15 @@ plot_antibody <- function(ab_data, strain,
   }
   # Plot with rlm smoothing, this should be equivalent to glm
   # or with loess
-  p <- ggplot(data=melted, aes(x=age, y=value, color=shot)) + geom_point(size=1.75)
+  p <- ggplot(data=melted, aes(x=age, y=value, color=shot))
+  p <- p + geom_point(aes(shape=shot), size=2.5, solid=FALSE)
   # robust linear model
   if (!is.na(yrange)){
     p <- p + ylim(yrange)
   }
-  p <- p + geom_smooth(method=smooth_method)
-  p <- p + ggtitle(strain)
+  p <- p + geom_smooth(method=smooth_method, alpha=0.2)
+  p <- p + ggtitle(strain) + scale_shape_discrete(solid=FALSE)
+  p <- p + scale_colour_manual(values=myPalette)
   p <- p + theme_bw()
   return(p)
 }
