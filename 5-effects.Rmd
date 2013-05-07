@@ -1,0 +1,291 @@
+```{r setup, include=FALSE}
+# set global chunk options
+library(knitr)
+opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
+# import funtions
+source("functions.R")
+load("ic_ec.Rdata")
+```
+
+## Table of contents
+* [IC50](#ic50)
+
+  [H1 Brisbane](#ic50h1brisbane) [H1 PR8](#ic50h1pr8)
+  
+  [H2](#ic50h2)
+  
+  [H3 Brisbane](#ic50h3brisbane) [H3 Hong Kong](#ic50h3hk)
+  
+  [H5 percent at 1st dilution](#ic50h5_dil) [H7 percent at 1st dilution](#ic50h7_dil)
+  
+* [EC50](#ec50)
+  
+  [H1 pandemic 2009](#ec50h1pdm09) [H2](#ec50h2) [H3](#ec50h3)
+  
+  [H4](#ec50h4) [H5](#ec50h5) [H7](#ec50h7) [H7 virus](#ec50h7vir)
+  
+  [H12](#ec50h12)
+  
+----
+
+Effect of seniority and vaccinations
+------------------------------------
+Here below we will study the combined effect of vaccinations and seniority on
+antibody titers. We will perform analysis of covariance (ANCOVA) to discern the
+separate and combined effect of the two regressors. The vaccination status is
+treated as a categorical binary variable (vaccinated/non vaccinated), as the
+self-reported number of vaccinations cannot be considered a reliable estimate,
+while the age is a quantitative covariate.
+
+We will perform ANCOVA estimates with the relation `shot*age`, meaning that the
+model will try to estimate the antibody titer as a function of the vaccination
+status, the age and their product. In symbols
+$$
+antibody = intercept + \alpha \cdot age + \beta \cdot shot + \gamma \cdot age \cdot shot
+$$
+which can be rewritten as
+$$
+antibody = intercept  + \beta \cdot shot + (\gamma \cdot shot + \alpha) \cdot age.
+$$
+If the $\gamma$ coefficient is significantly different from zero, it means that
+the slope of the regression lines $(\gamma\cdot shot + \alpha)$ is different for
+different categories of the vaccination status. We will perform the analysis by
+calling `glm` which performs robust linear regression accounting for non
+constant variance (a.k.a. heteroskedasticity).
+
+A slow-paced discussion of ANCOVA can be found in this [blog post][1].
+
+----
+
+<a id="ic50"></a>
+### IC50
+<a id="ic50h1brisbane"></a>
+#### H1 Brisbane: shot only
+For H1 Brisbane, we remove first the interaction term and then also the age,
+concluding that only the vaccinations are contributing to the antibody titer.
+```{r ic_slopes_H1_brisbane}
+fit_1 <- glm(H1_brisbane_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_2 <- glm(H1_brisbane_log ~ age + shot, data=ic_data)
+summary(fit_2)
+
+fit_3 <- glm(H1_brisbane_log ~ shot, data=ic_data)
+summary(fit_3)
+```
+
+<a id="ic50h1pr8"></a>
+#### H1 PR8: shot only
+```{r ic_slopes_h1pr8}
+fit_1 <- glm(H1_PR8_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_2 <- glm(H1_PR8_log ~ age + shot, data=ic_data)
+summary(fit_2)
+
+fit_3 <- glm(H1_PR8_log ~ shot, data=ic_data)
+summary(fit_3)
+```
+
+<a id="ic50h2"></a>
+#### H2: interaction present
+Although the interaction term is not very strong, removing it doesn't improve
+the fit, at least in terms of AIC. Removing the shot entirely leaves us with
+an even higher AIC.
+```{r ic_slopes_h2}
+fit_1 <- glm(H2_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_2 <- glm(H2_log ~ age + shot, data=ic_data)
+summary(fit_2)
+```
+
+<a id="ic50h3brisbane"></a>
+#### H3 Brisbane: shot only
+```{r ic_slopes_h3_brisbane}
+fit_1 <- glm(H3_brisbane_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_2 <- glm(H3_brisbane_log ~ age + shot, data=ic_data)
+summary(fit_2)
+
+fit_3 <- glm(H3_brisbane_log ~ shot, data=ic_data)
+summary(fit_3)
+```
+
+<a id="ic50h3hk"></a>
+#### H3 Hong Kong: age only
+```{r ic_slopes_h3_hk}
+fit_1 <- glm(H3_HK_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_2 <- glm(H3_HK_log ~ age + shot, data=ic_data)
+summary(fit_2)
+
+fit_3 <- glm(H3_HK_log ~ age, data=ic_data)
+summary(fit_3)
+```
+
+<a id="ic50h4"></a>
+#### H4: neither shot nor age
+```{r ic_slopes_h4}
+fit_1 <- glm(H4_log ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ age + shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ shot, data=ic_data)
+summary(fit_1)
+
+```
+
+<a id="ic50h5_dil"></a>
+#### H5 effect at first dilution: shot only
+```{r ic_slopes_h5_dil}
+fit_1 <- glm(H5_1st_dil_percent ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H5_1st_dil_percent ~ age + shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H5_1st_dil_percent ~ shot, data=ic_data)
+summary(fit_1)
+```
+
+<a id="ic50h7_dil"></a>
+#### H7 effect at first dilution: neither age nor shot
+```{r ic_slopes_h7_dil}
+fit_1 <- glm(H7_1st_dil_percent ~ age * shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_1st_dil_percent ~ age + shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_1st_dil_percent ~ age, data=ic_data)
+summary(fit_1)
+```
+
+<a id="ec50"></a>
+### EC50
+
+<a id="ec50h1pdm09"></a>
+#### H1 pandemic 2009: neither shot nor age
+```{r ec_slopes_h1pdm09}
+fit_1 <- glm(H1_pdm09_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ age + shot, data=ic_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ shot, data=ic_data)
+summary(fit_1)
+```
+
+<a id="ec50h1pr8"></a>
+#### H1 PR8: effect of both, but no interaction
+```{r ec_slopes_H1_PR8}
+fit_1 <- glm(H1_PR8_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H1_pdm09_log ~ age + shot, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h2"></a>
+#### H2: small signal from the interaction, but the age only fits almost
+equally well
+```{r ec_slopes_H2}
+fit_1 <- glm(H2_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H2_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H2_log ~ age, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h3"></a>
+#### H3: both contribute, but no interaction
+```{r ec_slopes_H3}
+fit_1 <- glm(H3_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H3_log ~ age + shot, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h4"></a>
+#### H4: neither age nor shot
+```{r ec_slopes_H4}
+fit_1 <- glm(H4_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H4_log ~ age, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h5"></a>
+#### H5: both contribute, but no interaction
+```{r ec_slopes_H5}
+fit_1 <- glm(H5_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H5_log ~ age + shot, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h7"></a>
+#### H7: barely an effect of age
+```{r ec_slopes_H7}
+fit_1 <- glm(H7_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_log ~ age, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h7_vir"></a>
+#### H7 virus: no FX
+```{r ec_slopes_H7_vir}
+fit_1 <- glm(H7_vir_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_vir_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_vir_log ~ shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H7_vir_log ~ age, data=ec_data)
+summary(fit_1)
+```
+
+<a id="ec50h12"></a>
+#### H12: barely an effect of age and shot, but no interaction
+```{r ec_slopes_H12}
+fit_1 <- glm(H12_log ~ age * shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H12_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H12_log ~ age, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H12_log ~ shot, data=ec_data)
+summary(fit_1)
+```
+
+
+[1]: http://r-eco-evo.blogspot.ch/2011/08/comparing-two-regression-slopes-by.html
