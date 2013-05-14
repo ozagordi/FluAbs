@@ -18,17 +18,38 @@ antibody-titer vs. age. Lots of plots.
 ### IC50
 ```{r plot_ic50, dpi=96, message=FALSE}
 range_here <- c(0, 4.7)
-plot_antibody(ic_data, "H1_brisbane_log", smooth_method="rlm", yrange=range_here)
+hp <- plot_antibody(ic_data, "H1_brisbane_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h1_brisbane")
 
-plot_antibody(ic_data, "H1_brisbane_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H1_PR8_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H2_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H3_brisbane_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H3_HK_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H4_log", smooth_method="rlm", yrange=range_here)
+hp <- plot_antibody(ic_data, "H1_PR8_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h1_pr8")
+
+hp <- plot_antibody(ic_data, "H2_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h2")
+
+hp <- plot_antibody(ic_data, "H3_brisbane_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h3_b")
+
+hp <- plot_antibody(ic_data, "H3_HK_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h3_hk")
+
+hp <- plot_antibody(ic_data, "H4_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h4")
+
 range_here <- c(-20, 75)
-plot_antibody(ic_data, "H5_1st_dil_percent", smooth_method="rlm", yrange=range_here)
-plot_antibody(ic_data, "H7_1st_dil_percent", smooth_method="rlm", yrange=range_here)
+hp <- plot_antibody(ic_data, "H5_1st_dil_percent", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h5_dil")
+
+hp <- plot_antibody(ic_data, "H7_1st_dil_percent", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h7_dil")
 ```
 
 ----
@@ -36,15 +57,41 @@ plot_antibody(ic_data, "H7_1st_dil_percent", smooth_method="rlm", yrange=range_h
 ### EC50
 ```{r plot_ec50, dpi=96, message=FALSE}
 range_here <- c(-1, 4.8)
-plot_antibody(ec_data, "H1_pdm09_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H1_PR8_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H2_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H3_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H4_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H5_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H7_vir_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H7_log", smooth_method="rlm", yrange=range_here)
-plot_antibody(ec_data, "H12_log", smooth_method="rlm", yrange=range_here)
+hp <- plot_antibody(ec_data, "H1_pdm09_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h1pdm09")
+
+hp <- plot_antibody(ec_data, "H1_PR8_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h1pr8")
+
+hp <- plot_antibody(ec_data, "H2_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h2")
+
+hp <- plot_antibody(ec_data, "H3_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h3")
+
+hp <- plot_antibody(ec_data, "H4_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h4")
+
+hp <- plot_antibody(ec_data, "H5_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h5")
+
+hp <- plot_antibody(ec_data, "H7_vir_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h7_vir")
+
+hp <- plot_antibody(ec_data, "H7_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h7")
+
+hp <- plot_antibody(ec_data, "H12_log", smooth_method="rlm", yrange=range_here)
+hp
+ExportPlot(hp,  "ec_h12")
 ```
 
 ----

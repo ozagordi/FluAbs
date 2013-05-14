@@ -170,15 +170,12 @@ summary(fit_1)
 ### EC50
 
 <a id="ec50h1pdm09"></a>
-#### H1 pandemic 2009: neither shot nor age
+#### H1 pandemic 2009: both shot and age without interaction
 ```{r ec_slopes_h1pdm09}
 fit_1 <- glm(H1_pdm09_log ~ age * shot, data=ec_data)
 summary(fit_1)
 
-fit_1 <- glm(H4_log ~ age + shot, data=ic_data)
-summary(fit_1)
-
-fit_1 <- glm(H4_log ~ shot, data=ic_data)
+fit_1 <- glm(H1_pdm09_log ~ age + shot, data=ec_data)
 summary(fit_1)
 ```
 

@@ -1,5 +1,6 @@
 *.html
 *.md
+*.eps
 ic_ec.Rdata
 cache/
 figure/

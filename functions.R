@@ -1,9 +1,21 @@
 library(MASS)
 library(reshape)
 library(ggplot2)
-myPalette <- c("#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-plot_antibody <- function(ab_data, strain,
-                          smooth_method="rlm", ymin=NA, ymax=NA, yrange=NA){
+myPalette <- c("#000000", "deepskyblue1", "#56B4E9", "#009E73", "#F0E442",
+               "#0072B2", "#CC79A7")
+ExportPlot <- function(gplot, filename, width=12, height=12) {
+  # Export plot in PDF and EPS.
+  # Notice that A4: width=11.69, height=8.27
+  #ggsave(paste(filename, '.pdf', sep=""), gplot, width = width, height = height)
+  postscript(file = paste(filename, '.eps', sep=""), width = width, height = height)
+  print(gplot)
+  dev.off()
+  #png(file = paste(filename, '_.png', sep=""), width = width * 100, height = height * 100)
+  #print(gplot)
+  #dev.off()
+}
+plot_antibody <- function(ab_data, strain, smooth_method="rlm",
+                          ymin=NA, ymax=NA, yrange=NA){
   ab_data_2 <- ab_data[, c("donorID", "age", "shot", strain)]
   melted <- melt(ab_data_2, id=c("donorID", "age", "shot"))
   if(smooth_method == "rlm"){
@@ -18,7 +30,7 @@ plot_antibody <- function(ab_data, strain,
   # Plot with rlm smoothing, this should be equivalent to glm
   # or with loess
   p <- ggplot(data=melted, aes(x=age, y=value, color=shot))
-  p <- p + geom_point(aes(shape=shot), size=2.5, solid=FALSE)
+  p <- p + geom_point(aes(shape=shot), size=3., solid=FALSE) + geom_point(aes(shape=shot), size=4., solid=FALSE)
   # robust linear model
   if (!is.na(yrange)){
     p <- p + ylim(yrange)
@@ -27,6 +39,12 @@ plot_antibody <- function(ab_data, strain,
   p <- p + ggtitle(strain) + scale_shape_discrete(solid=FALSE)
   p <- p + scale_colour_manual(values=myPalette)
   p <- p + theme_bw()
+  p <- p + theme(axis.title.x = element_text(size=26),
+        axis.text.x  = element_text(size=20))
+  p <- p + theme(axis.title.y = element_text(size=26),
+                 axis.text.y  = element_text(size=20))
+  
+  
   return(p)
 }
 
