@@ -18,26 +18,69 @@ non-parametric regression (_i.e._ we perform smoothing).
 ### IC50
 ```{r smooth_ic_ggplot, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 range_here <- c(0, 4.7)
-plot_antibody(ic_data, "H1_brisbane_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ic_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ic_data, "H2_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ic_data, "H3_brisbane_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ic_data, "H3_HK_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ic_data, "H4_log", smooth_method="loess", yrange=range_here)
+hp <- plot_antibody(ic_data, "H1_brisbane_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h1_brisbane_smooth")
+
+hp <- plot_antibody(ic_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h1_pr8_smooth")
+
+hp <- plot_antibody(ic_data, "H2_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h2_smooth")
+
+hp <- plot_antibody(ic_data, "H3_brisbane_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h3_brisbane_smooth")
+
+hp <- plot_antibody(ic_data, "H3_HK_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h3_hk_smooth")
+
+hp <- plot_antibody(ic_data, "H4_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h4_smooth")
 ```
 
 ### EC50
 ```{r smooth_ec_ggplot, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 range_here <- c(-1, 4.8)
-plot_antibody(ec_data, "H1_pdm09_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H2_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H3_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H4_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H5_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H7_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H7_vir_log", smooth_method="loess", yrange=range_here)
-plot_antibody(ec_data, "H12_log", smooth_method="loess", yrange=range_here)
+hp <- plot_antibody(ec_data, "H1_pdm09_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h1_pdm09_smooth")
+
+hp <- plot_antibody(ec_data, "H1_PR8_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h1_pr8_smooth")
+
+hp <- plot_antibody(ec_data, "H2_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h2_smooth")
+
+hp <- plot_antibody(ec_data, "H3_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h3_smooth")
+
+hp <- plot_antibody(ec_data, "H4_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h4_smooth")
+
+hp <- plot_antibody(ec_data, "H5_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h5_smooth")
+
+hp <- plot_antibody(ec_data, "H7_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h7_smooth")
+
+hp <- plot_antibody(ec_data, "H7_vir_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h7_vir_smooth")
+
+hp <- plot_antibody(ec_data, "H12_log", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ec_h12_smooth")
 ```
 
 
@@ -60,4 +103,4 @@ for (st in c("H1_pdm09_log", "H1_PR8_log", "H2_log", "H3_log", "H4_log",
 
 ----
 
-## _Latest update: 27 April 2013_.
+## _Latest update: 19 May 2013_.
