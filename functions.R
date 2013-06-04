@@ -6,7 +6,7 @@ myPalette <- c("#000000", "deepskyblue1", "#56B4E9", "#009E73", "#F0E442",
 ExportPlot <- function(gplot, filename, width=12, height=12) {
   # Export plot in PDF and EPS.
   # Notice that A4: width=11.69, height=8.27
-  #ggsave(paste(filename, '.pdf', sep=""), gplot, width = width, height = height)
+  ggsave(paste(filename, '.pdf', sep=""), gplot, width = 7.5, height = 5.25)
   postscript(file = paste(filename, '.eps', sep=""), width = width, height = height)
   print(gplot)
   dev.off()

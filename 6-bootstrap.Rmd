@@ -1,0 +1,36 @@
+```{r setup, include=FALSE}
+# set global chunk options
+library(knitr)
+opts_chunk$set(cache=TRUE, echo=FALSE, warning=FALSE, message=FALSE)
+# import funtions
+source("bootstrapping.R")
+load("ic_ec.Rdata")
+```
+
+Bootstrapping some of the relations
+===================================
+AIC score is defined as
+$$
+AIC = -2\, \log \textrm{likelihood} + 2\, k
+$$
+where $k$ is the number of parameters in the model.
+This means the lower, the better. In the following, the full model has $k=3$,
+no interaction has $k=2$ and both age only and shot only have $k=1$.
+
+```{r ic_h2_boot}
+ic_h2_aic <- bs_AIC(ic_data, "H2_log", k=200)
+boxplot(ic_h2_aic)
+title("AIC score for IC50, H2")
+```
+
+```{r ec_h1pdm09_boot}
+ec_h1pdm_aic <- bs_AIC(ec_data, "H1_pdm09_log", k=200)
+boxplot(ec_h1pdm_aic)
+title("AIC score for EC50, H1 pandemic 2009")
+```
+
+```{r ec_h12_boot}
+ec_h12_aic <- bs_AIC(ec_data, "H12_log", k=200)
+boxplot(ec_h12_aic)
+title("AIC score for EC50, H12")
+```

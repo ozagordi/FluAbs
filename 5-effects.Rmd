@@ -91,12 +91,17 @@ summary(fit_3)
 #### H2: interaction present
 Although the interaction term is not very strong, removing it doesn't improve
 the fit, at least in terms of AIC. Removing the shot entirely leaves us with
-an even higher AIC.
+an even higher AIC. Bootstrapping 200 samples gives equivalent AIC scores for
+full, noint and age only. So we should choose age only.
+
 ```{r ic_slopes_h2}
 fit_1 <- glm(H2_log ~ age * shot, data=ic_data)
 summary(fit_1)
 
 fit_2 <- glm(H2_log ~ age + shot, data=ic_data)
+summary(fit_2)
+
+fit_2 <- glm(H2_log ~ age, data=ic_data)
 summary(fit_2)
 ```
 
@@ -170,12 +175,16 @@ summary(fit_1)
 ### EC50
 
 <a id="ec50h1pdm09"></a>
-#### H1 pandemic 2009: both shot and age without interaction
+#### H1 pandemic 2009: both shot and age without interaction, but almost
+the shot alone
 ```{r ec_slopes_h1pdm09}
 fit_1 <- glm(H1_pdm09_log ~ age * shot, data=ec_data)
 summary(fit_1)
 
 fit_1 <- glm(H1_pdm09_log ~ age + shot, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H1_pdm09_log ~ shot, data=ec_data)
 summary(fit_1)
 ```
 
@@ -185,12 +194,14 @@ summary(fit_1)
 fit_1 <- glm(H1_PR8_log ~ age * shot, data=ec_data)
 summary(fit_1)
 
-fit_1 <- glm(H1_pdm09_log ~ age + shot, data=ec_data)
+fit_1 <- glm(H1_PR8_log ~ age + shot, data=ec_data)
 summary(fit_1)
 ```
 
 <a id="ec50h2"></a>
 #### H2: small signal from the interaction, but the age only fits almost
+Bootstrapping and looking at the AIC there is no reason to include the shots,
+and the age alone explain everything.
 equally well
 ```{r ec_slopes_H2}
 fit_1 <- glm(H2_log ~ age * shot, data=ec_data)

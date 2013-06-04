@@ -156,10 +156,32 @@ ec_data$H2_log[ec_data$H2_log < -3] <- NA
 ec_data$H4_log[ec_data$H4_log < -1.5] <- NA
 ```
 
-Save everything, will be loaded in other files.
+
+#### Count the valid data (those that are not reported as `NA`) on each strain.
+For **IC** first
+```{r count_valid_data_ic, echo=TRUE}
+for(str in names(ic_data)[2:9]){
+  n <- sum(!is.na(ic_data[[str]]))
+  print(paste(str, "-->", n))
+}
+```
+
+and then for **EC**
+```{r count_valid_data_ec, echo=TRUE}
+for(str in names(ec_data)[2:10]){
+  n <- sum(!is.na(ec_data[[str]]))
+  print(paste(str, "-->", n))
+}
+```
+For all 271 donors the variable `shot` is defined (Vaccinated or Non
+vaccinated).
+
+----
+
+Save everything, it will be loaded in other files.
 ```{r save_ic_ec, echo=TRUE}
 save(ic_data, ec_data, file="ic_ec.Rdata")
 ```
 ----
 
-## _Latest update: 27 April 2013_.
+## _Latest update: 3 June 2013_.

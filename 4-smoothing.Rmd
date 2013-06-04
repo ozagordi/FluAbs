@@ -17,7 +17,7 @@ non-parametric regression (_i.e._ we perform smoothing).
 
 ### IC50
 ```{r smooth_ic_ggplot, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
-range_here <- c(0, 4.7)
+range_here <- c(-1, 4.8)
 hp <- plot_antibody(ic_data, "H1_brisbane_log", smooth_method="loess", yrange=range_here)
 hp
 ExportPlot(hp, "ic_h1_brisbane_smooth")
@@ -41,6 +41,15 @@ ExportPlot(hp, "ic_h3_hk_smooth")
 hp <- plot_antibody(ic_data, "H4_log", smooth_method="loess", yrange=range_here)
 hp
 ExportPlot(hp, "ic_h4_smooth")
+
+range_here <- c(-20, 75)
+hp <- plot_antibody(ic_data, "H5_1st_dil_percent", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h5_smooth")
+
+hp <- plot_antibody(ic_data, "H7_1st_dil_percent", smooth_method="loess", yrange=range_here)
+hp
+ExportPlot(hp, "ic_h7_smooth")
 ```
 
 ### EC50

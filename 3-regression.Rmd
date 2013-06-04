@@ -17,7 +17,7 @@ antibody-titer vs. age. Lots of plots.
 
 ### IC50
 ```{r plot_ic50, dpi=96, message=FALSE}
-range_here <- c(0, 4.7)
+range_here <- c(-1, 4.8)
 hp <- plot_antibody(ic_data, "H1_brisbane_log", smooth_method="rlm", yrange=range_here)
 hp
 ExportPlot(hp, "ic_h1_brisbane")
