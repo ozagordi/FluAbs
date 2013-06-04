@@ -2,6 +2,7 @@
 *.md
 *.eps
 *.pdf
+*.ai
 ic_ec.Rdata
 cache/
 figure/
