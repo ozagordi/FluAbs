@@ -201,8 +201,8 @@ summary(fit_1)
 <a id="ec50h2"></a>
 #### H2: small signal from the interaction, but the age only fits almost
 Bootstrapping and looking at the AIC there is no reason to include the shots,
-and the age alone explain everything.
-equally well
+and the age alone explain everything equally well. Last fit forces the
+intercept to zero.
 ```{r ec_slopes_H2}
 fit_1 <- glm(H2_log ~ age * shot, data=ec_data)
 summary(fit_1)
@@ -211,6 +211,9 @@ fit_1 <- glm(H2_log ~ age + shot, data=ec_data)
 summary(fit_1)
 
 fit_1 <- glm(H2_log ~ age, data=ec_data)
+summary(fit_1)
+
+fit_1 <- glm(H2_log ~ 0 + age, data=ec_data)
 summary(fit_1)
 ```
 
