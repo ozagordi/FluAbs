@@ -1,6 +1,11 @@
-# Ignore some intermediate files
+# Ignore some files used for preliminary/complementary analysis
+scrapbook.R
+6-bootstrap.*
+7-prediction.*
 analysis.*
-*.md
+
+# Intermediate and other auxiliary files
+*.html
 *.eps
 *.pdf
 *.ai
@@ -8,7 +13,6 @@ osvaldo_list_130424.rtf
 2013-03-11-merged_data.Rproj
 ic_ec.Rdata
 cache/
-figure/
 .Rproj.user
 .Rhistory
 .RData
