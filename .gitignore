@@ -1,4 +1,4 @@
-*.html
+# Ignore some intermediate files
 *.md
 *.eps
 *.pdf
