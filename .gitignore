@@ -1,4 +1,5 @@
 # Ignore some intermediate files
+analysis.*
 *.md
 *.eps
 *.pdf
