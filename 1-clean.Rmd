@@ -11,11 +11,32 @@ Load and clean the data
 
 <a id="data"></a>
 ## Data
+Donors data were taken from the file `donors_view.csv` in the `data/` directory.
+We excluded donors enrolled in the Novartis study, HIV positive and those for
+which the number of vaccinations is not defined.
+
 Data were loaded from several csv files (one per strain) and merged into two
 dataframes, one for IC50 values and one for the EC50 values.
+
 ```{r load_data, echo=FALSE, warning=FALSE}
 library(plyr)
 library(reshape)
+# donors data
+donors_view <- read.csv("../../data/donors_view.csv", sep=";", quote="\"",
+                          header=TRUE, na.strings=c("NULL"))
+
+# excludes those enrolled in novartis study or hiv positive
+# drop phone, email, shcs
+donors_view <- subset(donors_view,
+                      (novartis_study == 'n' | novartis_study == 'k') &
+                      hiv == 'n',
+                      select=-c(phone, email, shcs))
+
+# capitalize sex
+donors_view$sex <- toupper(donors_view$sex)
+print("dimension of donors_view")
+dim(donors_view)
+
 # EC data
 filenames <- list.files(path="../../data/data_to_merge_EC50/", full.names=TRUE)
 import.list <- llply(filenames, read.csv, sep=";")
@@ -24,6 +45,15 @@ ec_data <- merge_recurse(import.list, by="donorID")
 filenames <- list.files(path="../../data/data_to_merge_IC50/", full.names=TRUE)
 import.list <- llply(filenames, read.csv, sep=";")
 ic_data <- merge_recurse(import.list, by="donorID")
+```
+
+The age distribution per gender is shown in the next plot.
+
+```{r age_dist}
+p <- ggplot(donors_view, aes(x=age, fill=sex)) +
+  geom_histogram(binwidth=5, alpha=0.9, position="dodge") +
+  ggtitle("Age distribution per gender")
+p
 ```
 
 ## Data cleaning
@@ -65,21 +95,9 @@ p
 ```
 
 ### Merge with donors data
-Donors data were taken from the file `donors_view.csv` in the `data/` directory.
-We excluded donors enrolled in the Novartis study, HIV positive and those for
-which the number of vaccinations is not defined.
-
+Exclude donoros for which the vaccinations number is not defined.
 ```{r merge_donors}
-donors_view <- read.csv("../../data/donors_view.csv", sep=";", quote="\"",
-                          header=TRUE, na.strings=c("NULL"))
-# excludes those enrolled in novartis study or hiv positive or
-# for which flushot is not defined
-# drop phone, email, shcs
-donors_view <- subset(donors_view, novartis_study == 'n' &
-  donors_view$hiv == 'n' & !is.na(flushot_avg), select=-c(phone, email, shcs))
-
-# capitalize sex
-donors_view$sex <- toupper(donors_view$sex)
+donors_view <- subset(donors_view, !is.na(flushot_avg))
 
 # define a binary variable for vaccinated
 donors_view$shot[donors_view$flushot_avg > 0] <- 'Vaccinated'
@@ -87,28 +105,24 @@ donors_view$shot[donors_view$flushot_avg == 0] <- 'Non vaccinated'
 
 ic_data <- merge(ic_data, donors_view, by="donorID")
 ec_data <- merge(ec_data, donors_view, by="donorID")
+
+dim(ic_data)
+dim(ec_data)
 ```
-We are left with 271 donors, 141 females and 130 males, for which we can plot
+We are left with 273 donors, 142 females and 131 males, for which we can plot
 the following characteristics.
-```{r age_dist}
-p <- ggplot(ec_data, aes(x=age, fill=sex)) +
-  geom_histogram(binwidth=5, alpha=0.9, position="dodge") +
-  ggtitle("Age distribution per gender")
-p
-```
 
 ```{r vaccine_sex}
 p <- ggplot(ec_data, aes(x=sex, fill=shot)) + geom_histogram()
-  + ggtitle("Vaccinated and non vaccinated per gender")
+p <- p + ggtitle("Vaccinated and non vaccinated per gender")
 p
 
 table(ec_data$shot, ec_data$sex)
 
-p <- ggplot(ec_data, aes(x=age, fill=shot)) +
-  geom_histogram(binwidth=5, alpha=0.9, position="dodge") +
-  ggtitle("Age distribution per vaccination status")
+p <- ggplot(ec_data, aes(x=age, fill=shot))
+p <- p + geom_histogram(binwidth=5, alpha=0.9, position="dodge")
+p <- p + ggtitle("Age distribution per vaccination status")
 p
-
 ```
 
 It is important to point out that the groups are not homogeneous, vaccinated
@@ -116,7 +130,7 @@ are older than non vaccinated, as seen in the plot below.
 
 ```{r vaccine_age}
 p <- ggplot(ec_data, aes(x=shot, y=age)) + geom_boxplot()
-  + ggtitle("Age distribution per vaccination status")
+p <- p + ggtitle("Age distribution per vaccination status")
 p
 ```
 
@@ -173,7 +187,7 @@ for(str in names(ec_data)[2:10]){
   print(paste(str, "-->", n))
 }
 ```
-For all 271 donors the variable `shot` is defined (Vaccinated or Non
+For all 273 donors the variable `shot` is defined (Vaccinated or Non
 vaccinated).
 
 ----
@@ -184,4 +198,4 @@ save(ic_data, ec_data, file="ic_ec.Rdata")
 ```
 ----
 
-## _Latest update: 3 June 2013_.
+#### _Latest update: 26 November 2013_.

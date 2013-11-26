@@ -20,8 +20,8 @@ summary(fit_H1_B)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2     17    8.48      20 9.4e-09 ***
-## Residuals    244    104    0.43                    
+## ternary_shot   2   16.5    8.23    19.4 1.5e-08 ***
+## Residuals    246  104.5    0.42                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 24 observations deleted due to missingness
@@ -35,8 +35,8 @@ summary(fit_H1_P)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2    3.5   1.746    10.4 4.7e-05 ***
-## Residuals    254   42.7   0.168                    
+## ternary_shot   2    3.4   1.712    10.2 5.4e-05 ***
+## Residuals    256   42.9   0.168                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 14 observations deleted due to missingness
@@ -49,9 +49,9 @@ summary(fit_H2)
 ```
 
 ```
-##               Df Sum Sq Mean Sq F value Pr(>F)   
-## ternary_shot   2    2.3   1.134    4.79  0.009 **
-## Residuals    260   61.5   0.237                  
+##               Df Sum Sq Mean Sq F value Pr(>F)  
+## ternary_shot   2    2.1   1.038    4.31  0.014 *
+## Residuals    262   63.1   0.241                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 8 observations deleted due to missingness
@@ -65,8 +65,8 @@ summary(fit_H3_B)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)  
-## ternary_shot   2    3.4    1.69    4.33  0.014 *
-## Residuals    247   96.4    0.39                 
+## ternary_shot   2    3.2   1.588    4.08  0.018 *
+## Residuals    249   96.8   0.389                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 21 observations deleted due to missingness
@@ -80,8 +80,8 @@ summary(fit_H3_H)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2    5.2   2.607    8.27 0.00033 ***
-## Residuals    259   81.6   0.315                    
+## ternary_shot   2    5.0   2.493    7.87 0.00048 ***
+## Residuals    261   82.7   0.317                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 9 observations deleted due to missingness
@@ -95,8 +95,8 @@ summary(fit_H4)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)
-## ternary_shot   2   0.09  0.0428    0.53   0.59
-## Residuals    241  19.39  0.0805               
+## ternary_shot   2   0.08  0.0417    0.52   0.59
+## Residuals    243  19.40  0.0798               
 ## 27 observations deleted due to missingness
 ```
 
@@ -117,8 +117,8 @@ summary(fit_H1_pdm)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2   4.26   2.131    22.1 1.3e-09 ***
-## Residuals    267  25.75   0.096                    
+## ternary_shot   2   3.99   1.996    20.4 5.9e-09 ***
+## Residuals    269  26.38   0.098                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 1 observation deleted due to missingness
@@ -132,8 +132,8 @@ summary(fit_H1_PR8)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)    
-## ternary_shot   2   9.73    4.86    42.7 <2e-16 ***
-## Residuals    268  30.54    0.11                   
+## ternary_shot   2   9.53    4.76    41.8 <2e-16 ***
+## Residuals    270  30.78    0.11                   
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -146,8 +146,8 @@ summary(fit_H12)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)
-## ternary_shot   2    0.8   0.397    1.86   0.16
-## Residuals    268   57.1   0.213
+## ternary_shot   2    0.8   0.397    1.87   0.16
+## Residuals    270   57.2   0.212
 ```
 
 ```r
@@ -158,8 +158,8 @@ summary(fit_H2)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2   11.2    5.62    14.7 8.6e-07 ***
-## Residuals    265  101.1    0.38                    
+## ternary_shot   2   10.6    5.28    13.5 2.7e-06 ***
+## Residuals    267  104.6    0.39                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 3 observations deleted due to missingness
@@ -173,8 +173,8 @@ summary(fit_H3)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)  
-## ternary_shot   2    1.5   0.731    2.98  0.053 .
-## Residuals    268   65.8   0.246                 
+## ternary_shot   2    1.6   0.813    3.31  0.038 *
+## Residuals    270   66.4   0.246                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -187,8 +187,8 @@ summary(fit_H4)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)  
-## ternary_shot   2    2.5   1.229    2.79  0.063 .
-## Residuals    262  115.4   0.441                 
+## ternary_shot   2    2.6    1.28    2.92  0.056 .
+## Residuals    264  116.0    0.44                 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 6 observations deleted due to missingness
@@ -202,8 +202,8 @@ summary(fit_H5)
 
 ```
 ##               Df Sum Sq Mean Sq F value  Pr(>F)    
-## ternary_shot   2    9.9    4.94    19.8 9.6e-09 ***
-## Residuals    268   66.9    0.25                    
+## ternary_shot   2    9.6    4.81    19.2 1.7e-08 ***
+## Residuals    270   67.8    0.25                    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ```
@@ -216,8 +216,8 @@ summary(fit_H7_vir)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)
-## ternary_shot   2   0.32  0.1603    2.13   0.12
-## Residuals    268  20.15  0.0752
+## ternary_shot   2    0.3  0.1503    2.01   0.14
+## Residuals    270   20.2  0.0748
 ```
 
 ```r
@@ -228,8 +228,8 @@ summary(fit_H7)
 
 ```
 ##               Df Sum Sq Mean Sq F value Pr(>F)
-## ternary_shot   2   0.27  0.1351     1.7   0.18
-## Residuals    268  21.24  0.0793
+## ternary_shot   2   0.27  0.1374    1.73   0.18
+## Residuals    270  21.44  0.0794
 ```
 
 
@@ -289,21 +289,21 @@ summary(fit_1)
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2040  -0.2083   0.0085   0.2240   0.9580  
+## -1.2099  -0.2101   0.0064   0.2264   0.9521  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)   1.5364     0.0784    19.6   <2e-16 ***
-## age           0.0257     0.0019    13.6   <2e-16 ***
+## (Intercept)  1.52469    0.07817    19.5   <2e-16 ***
+## age          0.02608    0.00189    13.8   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1433)
+## (Dispersion parameter for gaussian family taken to be 0.1439)
 ## 
-##     Null deviance: 63.781  on 262  degrees of freedom
-## Residual deviance: 37.410  on 261  degrees of freedom
+##     Null deviance: 65.217  on 264  degrees of freedom
+## Residual deviance: 37.852  on 263  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 239.5
+## AIC: 242.3
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -321,28 +321,63 @@ summary(fit_0)
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2062  -0.2060   0.0003   0.2172   0.9772  
+## -1.2122  -0.2034  -0.0022   0.2160   0.9758  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  1.52586    0.07963   19.16   <2e-16 ***
-## age          0.02640    0.00208   12.67   <2e-16 ***
-## flushot_avg -0.00428    0.00559   -0.77     0.44    
+## (Intercept)  1.51257    0.07926   19.08   <2e-16 ***
+## age          0.02686    0.00207   12.99   <2e-16 ***
+## flushot_avg -0.00519    0.00557   -0.93     0.35    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1436)
+## (Dispersion parameter for gaussian family taken to be 0.144)
 ## 
-##     Null deviance: 63.781  on 262  degrees of freedom
-## Residual deviance: 37.325  on 260  degrees of freedom
+##     Null deviance: 65.217  on 264  degrees of freedom
+## Residual deviance: 37.727  on 262  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 240.9
+## AIC: 243.5
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
 
-The coefficient for the shots is very close to zero, and can be removed.
+Even the AIC (Akaike's Information Criterion) is higher for the model with the
+vaccinations (the lower AIC, the better).
+The coefficient for the shots is very close to zero, and can be removed without
+worries.
+
+### Regression for age categories, gender and episodes
+
+```
+## 
+## Call:
+## glm(formula = H2_log ~ episodes_avg + sex + age, data = ic_data)
+## 
+## Deviance Residuals: 
+##     Min       1Q   Median       3Q      Max  
+## -1.1534  -0.2102  -0.0097   0.2110   0.9802  
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)   1.55641    0.08419   18.49   <2e-16 ***
+## episodes_avg -0.00811    0.00594   -1.37     0.17    
+## sexM         -0.05537    0.04790   -1.16     0.25    
+## age           0.02623    0.00193   13.62   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## 
+## (Dispersion parameter for gaussian family taken to be 0.1399)
+## 
+##     Null deviance: 60.900  on 249  degrees of freedom
+## Residual deviance: 34.422  on 246  degrees of freedom
+##   (23 observations deleted due to missingness)
+## AIC: 223.8
+## 
+## Number of Fisher Scoring iterations: 2
+```
+
+
 
 
 <a id="done_stata"></a>
-## 
+#### _Latest update: 26 November 2013_.

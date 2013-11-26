@@ -65,23 +65,23 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.5504  -0.4561  -0.0764   0.4581   1.6812  
+## -1.5414  -0.4532  -0.0748   0.4620   1.6803  
 ## 
 ## Coefficients:
-##                     Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         2.324060   0.229206   10.14   <2e-16 ***
-## age                 0.000519   0.006298    0.08   0.9344    
-## shotVaccinated      0.974763   0.294667    3.31   0.0011 ** 
-## age:shotVaccinated -0.010520   0.007614   -1.38   0.1683    
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)         2.28380    0.22607   10.10  < 2e-16 ***
+## age                 0.00190    0.00616    0.31  0.75809    
+## shotVaccinated      0.99266    0.29164    3.40  0.00078 ***
+## age:shotVaccinated -0.01147    0.00749   -1.53  0.12706    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.4197)
+## (Dispersion parameter for gaussian family taken to be 0.4203)
 ## 
-##     Null deviance: 120.67  on 246  degrees of freedom
-## Residual deviance: 101.98  on 243  degrees of freedom
+##     Null deviance: 120.96  on 248  degrees of freedom
+## Residual deviance: 102.97  on 245  degrees of freedom
 ##   (24 observations deleted due to missingness)
-## AIC: 492.5
+## AIC: 496.8
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -92,23 +92,23 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## glm(formula = H1_brisbane_log ~ age + shot, data = ic_data)
 ## 
 ## Deviance Residuals: 
-##    Min      1Q  Median      3Q     Max  
-## -1.515  -0.469  -0.085   0.454   1.680  
+##     Min       1Q   Median       3Q      Max  
+## -1.5023  -0.4799  -0.0828   0.4604   1.6925  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     2.57353    0.14145   18.19  < 2e-16 ***
-## age            -0.00668    0.00355   -1.88    0.061 .  
-## shotVaccinated  0.58706    0.09011    6.52  4.1e-10 ***
+## (Intercept)     2.55457    0.14119   18.09  < 2e-16 ***
+## age            -0.00585    0.00352   -1.66    0.097 .  
+## shotVaccinated  0.56757    0.08946    6.34  1.1e-09 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.4212)
+## (Dispersion parameter for gaussian family taken to be 0.4226)
 ## 
-##     Null deviance: 120.67  on 246  degrees of freedom
-## Residual deviance: 102.78  on 244  degrees of freedom
+##     Null deviance: 120.96  on 248  degrees of freedom
+## Residual deviance: 103.95  on 246  degrees of freedom
 ##   (24 observations deleted due to missingness)
-## AIC: 492.4
+## AIC: 497.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -120,21 +120,21 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.5121  -0.5094  -0.0739   0.4522   1.7504  
+## -1.5084  -0.5121  -0.0793   0.4696   1.7541  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      2.3420     0.0704   33.29  < 2e-16 ***
-## shotVaccinated   0.5408     0.0871    6.21  2.3e-09 ***
+## (Intercept)      2.3501     0.0699    33.6  < 2e-16 ***
+## shotVaccinated   0.5290     0.0867     6.1  4.1e-09 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4256)
 ## 
-##     Null deviance: 120.67  on 246  degrees of freedom
-## Residual deviance: 104.28  on 245  degrees of freedom
+##     Null deviance: 120.96  on 248  degrees of freedom
+## Residual deviance: 105.12  on 247  degrees of freedom
 ##   (24 observations deleted due to missingness)
-## AIC: 494
+## AIC: 497.9
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -150,23 +150,23 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1665  -0.3043  -0.0142   0.2770   1.4356  
+## -1.1690  -0.2956  -0.0147   0.2782   1.4335  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         2.85961    0.13897   20.58   <2e-16 ***
-## age                 0.00183    0.00377    0.49     0.63    
-## shotVaccinated      0.01315    0.18037    0.07     0.94    
-## age:shotVaccinated  0.00453    0.00461    0.98     0.33    
+## (Intercept)         2.83891    0.13705   20.71   <2e-16 ***
+## age                 0.00254    0.00369    0.69     0.49    
+## shotVaccinated      0.03979    0.17836    0.22     0.82    
+## age:shotVaccinated  0.00371    0.00453    0.82     0.41    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1681)
+## (Dispersion parameter for gaussian family taken to be 0.1676)
 ## 
-##     Null deviance: 46.240  on 256  degrees of freedom
-## Residual deviance: 42.534  on 253  degrees of freedom
+##     Null deviance: 46.370  on 258  degrees of freedom
+## Residual deviance: 42.728  on 255  degrees of freedom
 ##   (14 observations deleted due to missingness)
-## AIC: 277
+## AIC: 278.3
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -178,22 +178,22 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1825  -0.2965  -0.0139   0.2769   1.4241  
+## -1.1822  -0.2903  -0.0149   0.2716   1.4240  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     2.75333    0.08727   31.55   <2e-16 ***
-## age             0.00485    0.00217    2.24   0.0261 *  
-## shotVaccinated  0.18196    0.05504    3.31   0.0011 ** 
+## (Intercept)     2.75222    0.08680   31.71   <2e-16 ***
+## age             0.00499    0.00215    2.32   0.0209 *  
+## shotVaccinated  0.17867    0.05449    3.28   0.0012 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1681)
+## (Dispersion parameter for gaussian family taken to be 0.1673)
 ## 
-##     Null deviance: 46.240  on 256  degrees of freedom
-## Residual deviance: 42.696  on 254  degrees of freedom
+##     Null deviance: 46.37  on 258  degrees of freedom
+## Residual deviance: 42.84  on 256  degrees of freedom
 ##   (14 observations deleted due to missingness)
-## AIC: 276
+## AIC: 277
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -205,21 +205,21 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2340  -0.2623  -0.0119   0.2661   1.3872  
+## -1.2347  -0.2573  -0.0117   0.2701   1.3865  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      2.9239     0.0428   68.24   <2e-16 ***
-## shotVaccinated   0.2134     0.0536    3.98    9e-05 ***
+## (Intercept)      2.9286     0.0426   68.82  < 2e-16 ***
+## shotVaccinated   0.2094     0.0533    3.93  0.00011 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1707)
+## (Dispersion parameter for gaussian family taken to be 0.1702)
 ## 
-##     Null deviance: 46.240  on 256  degrees of freedom
-## Residual deviance: 43.538  on 255  degrees of freedom
+##     Null deviance: 46.370  on 258  degrees of freedom
+## Residual deviance: 43.744  on 257  degrees of freedom
 ##   (14 observations deleted due to missingness)
-## AIC: 279
+## AIC: 280.4
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -240,23 +240,23 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2207  -0.2144  -0.0009   0.2047   0.9413  
+## -1.2207  -0.2181   0.0005   0.2011   0.9413  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.83350    0.12053   15.21  < 2e-16 ***
-## age                 0.01905    0.00322    5.91  1.1e-08 ***
-## shotVaccinated     -0.54987    0.15907   -3.46  0.00064 ***
-## age:shotVaccinated  0.01188    0.00401    2.96  0.00335 ** 
+## (Intercept)         1.80065    0.11967   15.05   <2e-16 ***
+## age                 0.02016    0.00318    6.34    1e-09 ***
+## shotVaccinated     -0.52000    0.15825   -3.29   0.0012 ** 
+## age:shotVaccinated  0.01082    0.00397    2.72   0.0069 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1375)
+## (Dispersion parameter for gaussian family taken to be 0.1384)
 ## 
-##     Null deviance: 63.781  on 262  degrees of freedom
-## Residual deviance: 35.606  on 259  degrees of freedom
+##     Null deviance: 65.217  on 264  degrees of freedom
+## Residual deviance: 36.113  on 261  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 230.5
+## AIC: 233.9
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -268,22 +268,22 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -1.178  -0.230   0.002   0.197   0.984  
+## -1.181  -0.230   0.005   0.198   0.981  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.56045    0.07878   19.81   <2e-16 ***
-## age             0.02672    0.00195   13.73   <2e-16 ***
-## shotVaccinated -0.10131    0.04931   -2.05    0.041 *  
+## (Intercept)     1.55281    0.07858   19.76   <2e-16 ***
+## age             0.02709    0.00193   14.03   <2e-16 ***
+## shotVaccinated -0.10996    0.04898   -2.25    0.026 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1416)
+## (Dispersion parameter for gaussian family taken to be 0.1417)
 ## 
-##     Null deviance: 63.781  on 262  degrees of freedom
-## Residual deviance: 36.812  on 260  degrees of freedom
+##     Null deviance: 65.217  on 264  degrees of freedom
+## Residual deviance: 37.138  on 262  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 237.2
+## AIC: 239.3
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -295,21 +295,21 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2040  -0.2083   0.0085   0.2240   0.9580  
+## -1.2099  -0.2101   0.0064   0.2264   0.9521  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)   1.5364     0.0784    19.6   <2e-16 ***
-## age           0.0257     0.0019    13.6   <2e-16 ***
+## (Intercept)  1.52469    0.07817    19.5   <2e-16 ***
+## age          0.02608    0.00189    13.8   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1433)
+## (Dispersion parameter for gaussian family taken to be 0.1439)
 ## 
-##     Null deviance: 63.781  on 262  degrees of freedom
-## Residual deviance: 37.410  on 261  degrees of freedom
+##     Null deviance: 65.217  on 264  degrees of freedom
+## Residual deviance: 37.852  on 263  degrees of freedom
 ##   (8 observations deleted due to missingness)
-## AIC: 239.5
+## AIC: 242.3
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -325,23 +325,23 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.3104  -0.3812  -0.0138   0.3830   1.5889  
+## -2.3079  -0.3746  -0.0131   0.3938   1.5608  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         2.62674    0.20752   12.66   <2e-16 ***
-## age                -0.00433    0.00559   -0.77     0.44    
-## shotVaccinated     -0.01012    0.27280   -0.04     0.97    
-## age:shotVaccinated  0.00672    0.00695    0.97     0.33    
+## (Intercept)         2.59135    0.20498   12.64   <2e-16 ***
+## age                -0.00311    0.00549   -0.57     0.57    
+## shotVaccinated      0.01827    0.27011    0.07     0.95    
+## age:shotVaccinated  0.00564    0.00685    0.82     0.41    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.3902)
+## (Dispersion parameter for gaussian family taken to be 0.3894)
 ## 
-##     Null deviance: 99.737  on 249  degrees of freedom
-## Residual deviance: 95.994  on 246  degrees of freedom
+##     Null deviance: 100.005  on 251  degrees of freedom
+## Residual deviance:  96.561  on 248  degrees of freedom
 ##   (21 observations deleted due to missingness)
-## AIC: 480.2
+## AIC: 483.4
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -353,22 +353,22 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.2746  -0.3717   0.0037   0.4086   1.5157  
+## -2.2774  -0.3728  -0.0023   0.4107   1.5010  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    2.47e+00   1.34e-01   18.48   <2e-16 ***
-## age            2.75e-05   3.32e-03    0.01   0.9934    
-## shotVaccinated 2.41e-01   8.43e-02    2.86   0.0046 ** 
+## (Intercept)    2.463195   0.133186   18.49   <2e-16 ***
+## age            0.000506   0.003284    0.15   0.8777    
+## shotVaccinated 0.229615   0.083511    2.75   0.0064 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.3901)
+## (Dispersion parameter for gaussian family taken to be 0.3889)
 ## 
-##     Null deviance: 99.737  on 249  degrees of freedom
-## Residual deviance: 96.359  on 247  degrees of freedom
+##     Null deviance: 100.005  on 251  degrees of freedom
+## Residual deviance:  96.824  on 249  degrees of freedom
 ##   (21 observations deleted due to missingness)
-## AIC: 479.1
+## AIC: 482.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -380,21 +380,21 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.2748  -0.3714   0.0038   0.4083   1.5162  
+## -2.2817  -0.3710  -0.0031   0.4048   1.5093  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      2.4743     0.0650   38.07   <2e-16 ***
-## shotVaccinated   0.2410     0.0817    2.95   0.0035 ** 
+## (Intercept)      2.4811     0.0645   38.45   <2e-16 ***
+## shotVaccinated   0.2325     0.0812    2.86   0.0046 ** 
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.3885)
+## (Dispersion parameter for gaussian family taken to be 0.3873)
 ## 
-##     Null deviance: 99.737  on 249  degrees of freedom
-## Residual deviance: 96.359  on 248  degrees of freedom
+##     Null deviance: 100.005  on 251  degrees of freedom
+## Residual deviance:  96.834  on 250  degrees of freedom
 ##   (21 observations deleted due to missingness)
-## AIC: 477.1
+## AIC: 480.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -410,23 +410,23 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.3714  -0.3054  -0.0334   0.3204   1.0860  
+## -1.3715  -0.3073  -0.0317   0.3229   1.0837  
 ## 
 ## Coefficients:
-##                     Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.64e+00   1.54e-01   10.69  < 2e-16 ***
-## age                 2.75e-02   4.10e-03    6.71  1.2e-10 ***
-## shotVaccinated     -8.43e-03   2.02e-01   -0.04     0.97    
-## age:shotVaccinated  3.26e-05   5.08e-03    0.01     0.99    
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)         1.62255    0.15191   10.68  < 2e-16 ***
+## age                 0.02816    0.00402    7.00  2.1e-11 ***
+## shotVaccinated      0.02026    0.19995    0.10     0.92    
+## age:shotVaccinated -0.00082    0.00502   -0.16     0.87    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2208)
+## (Dispersion parameter for gaussian family taken to be 0.2201)
 ## 
-##     Null deviance: 86.845  on 261  degrees of freedom
-## Residual deviance: 56.958  on 258  degrees of freedom
+##     Null deviance: 87.716  on 263  degrees of freedom
+## Residual deviance: 57.229  on 260  degrees of freedom
 ##   (9 observations deleted due to missingness)
-## AIC: 353.7
+## AIC: 355.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -438,22 +438,22 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.3712  -0.3054  -0.0334   0.3204   1.0860  
+## -1.3745  -0.3068  -0.0309   0.3223   1.0848  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.64221    0.09857   16.66   <2e-16 ***
-## age             0.02749    0.00242   11.35   <2e-16 ***
-## shotVaccinated -0.00720    0.06163   -0.12     0.91    
+## (Intercept)      1.6415     0.0981   16.73   <2e-16 ***
+## age              0.0276     0.0024   11.53   <2e-16 ***
+## shotVaccinated  -0.0109     0.0611   -0.18     0.86    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2199)
+## (Dispersion parameter for gaussian family taken to be 0.2193)
 ## 
-##     Null deviance: 86.845  on 261  degrees of freedom
-## Residual deviance: 56.958  on 259  degrees of freedom
+##     Null deviance: 87.716  on 263  degrees of freedom
+## Residual deviance: 57.235  on 261  degrees of freedom
 ##   (9 observations deleted due to missingness)
-## AIC: 351.7
+## AIC: 353.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -464,22 +464,22 @@ full, noint and age only. So we should choose age only.
 ## glm(formula = H3_HK_log ~ age, data = ic_data)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.3731  -0.3068  -0.0327   0.3210   1.0832  
+##    Min      1Q  Median      3Q     Max  
+## -1.377  -0.304  -0.035   0.321   1.081  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  1.64036    0.09709    16.9   <2e-16 ***
-## age          0.02742    0.00235    11.7   <2e-16 ***
+## (Intercept)  1.63848    0.09649    17.0   <2e-16 ***
+## age          0.02754    0.00233    11.8   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2191)
+## (Dispersion parameter for gaussian family taken to be 0.2185)
 ## 
-##     Null deviance: 86.845  on 261  degrees of freedom
-## Residual deviance: 56.961  on 260  degrees of freedom
+##     Null deviance: 87.716  on 263  degrees of freedom
+## Residual deviance: 57.242  on 262  degrees of freedom
 ##   (9 observations deleted due to missingness)
-## AIC: 349.7
+## AIC: 351.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -495,23 +495,23 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.9017  -0.1210  -0.0076   0.1341   1.5030  
+## -0.9014  -0.1201  -0.0077   0.1315   1.5033  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.99637    0.09740   20.50   <2e-16 ***
-## age                -0.00146    0.00257   -0.57     0.57    
-## shotVaccinated     -0.06807    0.12792   -0.53     0.60    
-## age:shotVaccinated  0.00267    0.00320    0.84     0.40    
+## (Intercept)         1.99426    0.09597   20.78   <2e-16 ***
+## age                -0.00139    0.00252   -0.55     0.58    
+## shotVaccinated     -0.06722    0.12629   -0.53     0.60    
+## age:shotVaccinated  0.00263    0.00314    0.84     0.40    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.08062)
+## (Dispersion parameter for gaussian family taken to be 0.07996)
 ## 
-##     Null deviance: 19.479  on 243  degrees of freedom
-## Residual deviance: 19.348  on 240  degrees of freedom
+##     Null deviance: 19.480  on 245  degrees of freedom
+## Residual deviance: 19.351  on 242  degrees of freedom
 ##   (27 observations deleted due to missingness)
-## AIC: 84.01
+## AIC: 82.65
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -523,22 +523,22 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.8843  -0.1208  -0.0036   0.1349   1.4992  
+## -0.8842  -0.1194  -0.0032   0.1335   1.4996  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    1.933982   0.062570   30.91   <2e-16 ***
-## age            0.000271   0.001527    0.18     0.86    
-## shotVaccinated 0.033870   0.038750    0.87     0.38    
+## (Intercept)    1.933157   0.062110   31.12   <2e-16 ***
+## age            0.000296   0.001507    0.20     0.84    
+## shotVaccinated 0.033313   0.038292    0.87     0.39    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.08052)
+## (Dispersion parameter for gaussian family taken to be 0.07986)
 ## 
-##     Null deviance: 19.479  on 243  degrees of freedom
-## Residual deviance: 19.404  on 241  degrees of freedom
+##     Null deviance: 19.480  on 245  degrees of freedom
+## Residual deviance: 19.407  on 243  degrees of freedom
 ##   (27 observations deleted due to missingness)
-## AIC: 82.71
+## AIC: 81.35
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -550,21 +550,21 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.8870  -0.1191  -0.0045   0.1349   1.4981  
+## -0.8872  -0.1174  -0.0046   0.1340   1.4985  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      1.9437     0.0299   65.12   <2e-16 ***
-## shotVaccinated   0.0355     0.0376    0.94     0.35    
+## (Intercept)      1.9439     0.0296   65.75   <2e-16 ***
+## shotVaccinated   0.0350     0.0372    0.94     0.35    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.08019)
+## (Dispersion parameter for gaussian family taken to be 0.07955)
 ## 
-##     Null deviance: 19.479  on 243  degrees of freedom
-## Residual deviance: 19.407  on 242  degrees of freedom
+##     Null deviance: 19.48  on 245  degrees of freedom
+## Residual deviance: 19.41  on 244  degrees of freedom
 ##   (27 observations deleted due to missingness)
-## AIC: 80.75
+## AIC: 79.39
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -580,20 +580,20 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -21.45   -4.43   -0.92    2.99   69.10  
+## -21.40   -4.40   -0.92    3.00   69.18  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)
-## (Intercept)         -0.3528     3.4053   -0.10     0.92
-## age                  0.0487     0.0918    0.53     0.60
-## shotVaccinated       5.1594     4.5063    1.14     0.25
-## age:shotVaccinated  -0.0443     0.1144   -0.39     0.70
+## (Intercept)         -0.5799     3.3600   -0.17     0.86
+## age                  0.0565     0.0900    0.63     0.53
+## shotVaccinated       5.2465     4.4561    1.18     0.24
+## age:shotVaccinated  -0.0494     0.1127   -0.44     0.66
 ## 
-## (Dispersion parameter for gaussian family taken to be 114.6)
+## (Dispersion parameter for gaussian family taken to be 113.9)
 ## 
-##     Null deviance: 31466  on 270  degrees of freedom
-## Residual deviance: 30595  on 267  degrees of freedom
-## AIC: 2060
+##     Null deviance: 31494  on 272  degrees of freedom
+## Residual deviance: 30644  on 269  degrees of freedom
+## AIC: 2073
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -605,21 +605,21 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -21.32   -4.23   -0.88    2.79   69.41  
+## -21.25   -4.20   -0.89    2.78   69.53  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)  
-## (Intercept)      0.6544     2.1965    0.30    0.766  
-## age              0.0201     0.0547    0.37    0.713  
-## shotVaccinated   3.4975     1.3809    2.53    0.012 *
+## (Intercept)      0.5393     2.1835    0.25    0.805  
+## age              0.0249     0.0541    0.46    0.645  
+## shotVaccinated   3.3861     1.3672    2.48    0.014 *
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 114.2)
+## (Dispersion parameter for gaussian family taken to be 113.6)
 ## 
-##     Null deviance: 31466  on 270  degrees of freedom
-## Residual deviance: 30612  on 268  degrees of freedom
-## AIC: 2058
+##     Null deviance: 31494  on 272  degrees of freedom
+## Residual deviance: 30665  on 270  degrees of freedom
+## AIC: 2072
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -631,20 +631,20 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -21.49   -4.49   -0.86    2.64   69.01  
+## -21.46   -4.46   -0.92    2.58   69.04  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)   
-## (Intercept)        1.36       1.05    1.30   0.1956   
-## shotVaccinated     3.62       1.34    2.71   0.0071 **
+## (Intercept)        1.42       1.04    1.36   0.1738   
+## shotVaccinated     3.54       1.33    2.67   0.0081 **
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 113.9)
+## (Dispersion parameter for gaussian family taken to be 113.2)
 ## 
-##     Null deviance: 31466  on 270  degrees of freedom
-## Residual deviance: 30628  on 269  degrees of freedom
-## AIC: 2056
+##     Null deviance: 31494  on 272  degrees of freedom
+## Residual deviance: 30690  on 271  degrees of freedom
+## AIC: 2070
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -660,22 +660,22 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -21.58   -9.54   -2.03    7.47   43.18  
+## -21.66   -9.63   -1.90    7.43   43.20  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         13.4257     3.8531    3.48  0.00058 ***
-## age                  0.0285     0.1039    0.27  0.78377    
-## shotVaccinated      -6.7582     5.0989   -1.33  0.18616    
-## age:shotVaccinated   0.1444     0.1295    1.12  0.26564    
+## (Intercept)         13.3386     3.8048    3.51  0.00053 ***
+## age                  0.0315     0.1020    0.31  0.75736    
+## shotVaccinated      -6.9838     5.0459   -1.38  0.16749    
+## age:shotVaccinated   0.1474     0.1276    1.16  0.24910    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 146.7)
+## (Dispersion parameter for gaussian family taken to be 146.1)
 ## 
-##     Null deviance: 39939  on 270  degrees of freedom
-## Residual deviance: 39170  on 267  degrees of freedom
-## AIC: 2127
+##     Null deviance: 40131  on 272  degrees of freedom
+## Residual deviance: 39293  on 269  degrees of freedom
+## AIC: 2141
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -687,21 +687,21 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -22.56   -9.21   -1.93    7.54   43.62  
+## -22.66   -9.22   -1.83    7.33   43.65  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      10.145      2.490    4.07  6.1e-05 ***
-## age               0.122      0.062    1.96    0.051 .  
-## shotVaccinated   -1.345      1.566   -0.86    0.391    
+## (Intercept)     10.0020     2.4778    4.04  7.1e-05 ***
+## age              0.1256     0.0614    2.05    0.042 *  
+## shotVaccinated  -1.4375     1.5514   -0.93    0.355    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 146.8)
+## (Dispersion parameter for gaussian family taken to be 146.3)
 ## 
-##     Null deviance: 39939  on 270  degrees of freedom
-## Residual deviance: 39352  on 268  degrees of freedom
-## AIC: 2126
+##     Null deviance: 40131  on 272  degrees of freedom
+## Residual deviance: 39488  on 270  degrees of freedom
+## AIC: 2141
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -713,20 +713,20 @@ full, noint and age only. So we should choose age only.
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -21.44   -8.96   -1.69    7.89   43.25  
+## -21.48   -8.95   -1.62    7.89   43.25  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    9.830      2.462    3.99  8.4e-05 ***
-## age            0.108      0.060    1.81    0.072 .  
+## (Intercept)   9.6399     2.4462    3.94   0.0001 ***
+## age           0.1121     0.0596    1.88   0.0609 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 146.7)
+## (Dispersion parameter for gaussian family taken to be 146.2)
 ## 
-##     Null deviance: 39939  on 270  degrees of freedom
-## Residual deviance: 39461  on 269  degrees of freedom
-## AIC: 2125
+##     Null deviance: 40131  on 272  degrees of freedom
+## Residual deviance: 39613  on 271  degrees of freedom
+## AIC: 2140
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -736,8 +736,7 @@ full, noint and age only. So we should choose age only.
 ### EC50
 
 <a id="ec50h1pdm09"></a>
-#### H1 pandemic 2009: both shot and age without interaction, but almost
-the shot alone
+#### H1 pandemic 2009: both shot and age without interaction
 
 ```
 ## 
@@ -746,23 +745,23 @@ the shot alone
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.7154  -0.2117   0.0027   0.1946   0.7970  
+## -0.7359  -0.2104   0.0016   0.1937   0.7995  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.30591    0.10063   12.98   <2e-16 ***
-## age                 0.00158    0.00271    0.58     0.56    
-## shotVaccinated     -0.00129    0.13267   -0.01     0.99    
-## age:shotVaccinated  0.00485    0.00336    1.44     0.15    
+## (Intercept)         1.28347    0.10002   12.83   <2e-16 ***
+## age                 0.00235    0.00267    0.88     0.38    
+## shotVaccinated      0.00857    0.13216    0.06     0.95    
+## age:shotVaccinated  0.00432    0.00334    1.30     0.20    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.09835)
+## (Dispersion parameter for gaussian family taken to be 0.09922)
 ## 
-##     Null deviance: 30.009  on 269  degrees of freedom
-## Residual deviance: 26.160  on 266  degrees of freedom
+##     Null deviance: 30.372  on 271  degrees of freedom
+## Residual deviance: 26.590  on 268  degrees of freedom
 ##   (1 observation deleted due to missingness)
-## AIC: 146
+## AIC: 149.4
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -774,22 +773,22 @@ the shot alone
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.7801  -0.2149  -0.0075   0.1816   0.8264  
+## -0.7925  -0.2195  -0.0021   0.1831   0.8261  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.19489    0.06492   18.41  < 2e-16 ***
-## age             0.00472    0.00161    2.93   0.0037 ** 
-## shotVaccinated  0.18084    0.04067    4.45  1.3e-05 ***
+## (Intercept)     1.18484    0.06496   18.24  < 2e-16 ***
+## age             0.00512    0.00160    3.19   0.0016 ** 
+## shotVaccinated  0.17157    0.04053    4.23  3.2e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.09874)
+## (Dispersion parameter for gaussian family taken to be 0.09947)
 ## 
-##     Null deviance: 30.009  on 269  degrees of freedom
-## Residual deviance: 26.365  on 267  degrees of freedom
+##     Null deviance: 30.372  on 271  degrees of freedom
+## Residual deviance: 26.757  on 269  degrees of freedom
 ##   (1 observation deleted due to missingness)
-## AIC: 146.1
+## AIC: 149.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -801,21 +800,21 @@ the shot alone
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.7194  -0.2010  -0.0098   0.1962   0.8103  
+## -0.7163  -0.2021  -0.0101   0.1949   0.8134  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      1.3618     0.0316   43.16  < 2e-16 ***
-## shotVaccinated   0.2099     0.0400    5.25  3.1e-07 ***
+## (Intercept)      1.3670     0.0316   43.26   <2e-16 ***
+## shotVaccinated   0.2016     0.0401    5.03    9e-07 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1015)
+## (Dispersion parameter for gaussian family taken to be 0.1029)
 ## 
-##     Null deviance: 30.009  on 269  degrees of freedom
-## Residual deviance: 27.212  on 268  degrees of freedom
+##     Null deviance: 30.372  on 271  degrees of freedom
+## Residual deviance: 27.770  on 270  degrees of freedom
 ##   (1 observation deleted due to missingness)
-## AIC: 152.6
+## AIC: 157.2
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -831,22 +830,22 @@ the shot alone
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.9319  -0.2086   0.0037   0.1857   1.0795  
+## -0.9297  -0.2093   0.0053   0.1873   1.0806  
 ## 
 ## Coefficients:
 ##                     Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.781456   0.103546   17.20   <2e-16 ***
-## age                 0.008540   0.002793    3.06   0.0025 ** 
-## shotVaccinated      0.360182   0.137026    2.63   0.0091 ** 
-## age:shotVaccinated -0.000691   0.003479   -0.20   0.8428    
+## (Intercept)         1.771087   0.102209   17.33   <2e-16 ***
+## age                 0.008895   0.002739    3.25   0.0013 ** 
+## shotVaccinated      0.367045   0.135550    2.71   0.0072 ** 
+## age:shotVaccinated -0.000979   0.003428   -0.29   0.7754    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1059)
+## (Dispersion parameter for gaussian family taken to be 0.1054)
 ## 
-##     Null deviance: 40.268  on 270  degrees of freedom
-## Residual deviance: 28.288  on 267  degrees of freedom
-## AIC: 166.7
+##     Null deviance: 40.307  on 272  degrees of freedom
+## Residual deviance: 28.355  on 269  degrees of freedom
+## AIC: 166.5
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -858,21 +857,21 @@ the shot alone
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -0.9373  -0.2090   0.0038   0.1857   1.0754  
+## -0.9375  -0.2090   0.0032   0.1881   1.0747  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.79715    0.06677   26.91  < 2e-16 ***
-## age             0.00810    0.00166    4.87  1.9e-06 ***
-## shotVaccinated  0.33429    0.04198    7.96  4.8e-14 ***
+## (Intercept)     1.79325    0.06641   27.00  < 2e-16 ***
+## age             0.00827    0.00164    5.03  9.0e-07 ***
+## shotVaccinated  0.33021    0.04158    7.94  5.4e-14 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.1056)
+## (Dispersion parameter for gaussian family taken to be 0.1051)
 ## 
-##     Null deviance: 40.268  on 270  degrees of freedom
-## Residual deviance: 28.293  on 268  degrees of freedom
-## AIC: 164.7
+##     Null deviance: 40.307  on 272  degrees of freedom
+## Residual deviance: 28.364  on 270  degrees of freedom
+## AIC: 164.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -890,24 +889,24 @@ intercept to zero.
 ## glm(formula = H2_log ~ age * shot, data = ec_data)
 ## 
 ## Deviance Residuals: 
-##    Min      1Q  Median      3Q     Max  
-## -1.867  -0.295  -0.008   0.313   1.691  
+##     Min       1Q   Median       3Q      Max  
+## -1.8669  -0.2943  -0.0111   0.3151   1.6909  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         0.19520    0.16680    1.17    0.243    
-## age                 0.02253    0.00448    5.03  8.9e-07 ***
-## shotVaccinated     -0.49137    0.21961   -2.24    0.026 *  
-## age:shotVaccinated  0.01355    0.00556    2.44    0.016 *  
+## (Intercept)         0.13879    0.16619    0.84    0.404    
+## age                 0.02446    0.00443    5.52  8.1e-08 ***
+## shotVaccinated     -0.43695    0.21926   -1.99    0.047 *  
+## age:shotVaccinated  0.01166    0.00553    2.11    0.036 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2684)
+## (Dispersion parameter for gaussian family taken to be 0.272)
 ## 
-##     Null deviance: 112.382  on 267  degrees of freedom
-## Residual deviance:  70.851  on 264  degrees of freedom
+##     Null deviance: 115.19  on 269  degrees of freedom
+## Residual deviance:  72.35  on 266  degrees of freedom
 ##   (3 observations deleted due to missingness)
-## AIC: 414
+## AIC: 420.7
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -919,22 +918,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.9062  -0.2842  -0.0018   0.3052   1.7410  
+## -1.9225  -0.2863  -0.0036   0.3022   1.7351  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)    -0.11564    0.10837   -1.07     0.29    
-## age             0.03131    0.00268   11.67   <2e-16 ***
-## shotVaccinated  0.01772    0.06789    0.26     0.79    
+## (Intercept)    -0.12781    0.10846   -1.18     0.24    
+## age             0.03194    0.00267   11.96   <2e-16 ***
+## shotVaccinated  0.00287    0.06767    0.04     0.97    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2734)
+## (Dispersion parameter for gaussian family taken to be 0.2755)
 ## 
-##     Null deviance: 112.382  on 267  degrees of freedom
-## Residual deviance:  72.442  on 265  degrees of freedom
+##     Null deviance: 115.185  on 269  degrees of freedom
+## Residual deviance:  73.558  on 267  degrees of freedom
 ##   (3 observations deleted due to missingness)
-## AIC: 418
+## AIC: 423.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -946,21 +945,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.9182  -0.2884  -0.0021   0.2996   1.7455  
+## -1.9245  -0.2866  -0.0023   0.3026   1.7359  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  -0.1112     0.1068   -1.04      0.3    
-## age           0.0315     0.0026   12.11   <2e-16 ***
+## (Intercept)  -0.1270     0.1067   -1.19     0.23    
+## age           0.0320     0.0026   12.32   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2724)
+## (Dispersion parameter for gaussian family taken to be 0.2745)
 ## 
-##     Null deviance: 112.382  on 267  degrees of freedom
-## Residual deviance:  72.461  on 266  degrees of freedom
+##     Null deviance: 115.185  on 269  degrees of freedom
+## Residual deviance:  73.558  on 268  degrees of freedom
 ##   (3 observations deleted due to missingness)
-## AIC: 416
+## AIC: 421.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -971,21 +970,21 @@ intercept to zero.
 ## glm(formula = H2_log ~ 0 + age, data = ec_data)
 ## 
 ## Deviance Residuals: 
-##    Min      1Q  Median      3Q     Max  
-## -1.913  -0.311  -0.018   0.307   1.769  
+##     Min       1Q   Median       3Q      Max  
+## -1.9188  -0.3131  -0.0235   0.3035   1.7622  
 ## 
 ## Coefficients:
 ##     Estimate Std. Error t value Pr(>|t|)    
-## age 0.028891   0.000776    37.2   <2e-16 ***
+## age 0.029016   0.000776    37.4   <2e-16 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2725)
+## (Dispersion parameter for gaussian family taken to be 0.2749)
 ## 
-##     Null deviance: 450.432  on 268  degrees of freedom
-## Residual deviance:  72.756  on 267  degrees of freedom
+##     Null deviance: 458.294  on 270  degrees of freedom
+## Residual deviance:  73.947  on 269  degrees of freedom
 ##   (3 observations deleted due to missingness)
-## AIC: 415.1
+## AIC: 420.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1001,22 +1000,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2203  -0.3239  -0.0396   0.3059   1.3554  
+## -1.2192  -0.3243  -0.0402   0.3013   1.3745  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         3.76899    0.15288   24.65  < 2e-16 ***
-## age                -0.01492    0.00412   -3.62  0.00036 ***
-## shotVaccinated     -0.09503    0.20231   -0.47  0.63894    
-## age:shotVaccinated  0.00819    0.00514    1.59  0.11217    
+## (Intercept)         3.78978    0.15099   25.10  < 2e-16 ***
+## age                -0.01563    0.00405   -3.86  0.00014 ***
+## shotVaccinated     -0.11842    0.20024   -0.59  0.55477    
+## age:shotVaccinated  0.00895    0.00506    1.77  0.07836 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2309)
+## (Dispersion parameter for gaussian family taken to be 0.23)
 ## 
-##     Null deviance: 67.261  on 270  degrees of freedom
-## Residual deviance: 61.662  on 267  degrees of freedom
-## AIC: 377.9
+##     Null deviance: 68.041  on 272  degrees of freedom
+## Residual deviance: 61.877  on 269  degrees of freedom
+## AIC: 379.5
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1027,22 +1026,22 @@ intercept to zero.
 ## glm(formula = H3_log ~ age + shot, data = ec_data)
 ## 
 ## Deviance Residuals: 
-##    Min      1Q  Median      3Q     Max  
-## -1.251  -0.321  -0.039   0.289   1.379  
+##     Min       1Q   Median       3Q      Max  
+## -1.2531  -0.3219  -0.0404   0.2933   1.3818  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     3.58301    0.09905   36.17  < 2e-16 ***
-## age            -0.00964    0.00247   -3.91  0.00012 ***
-## shotVaccinated  0.21184    0.06227    3.40  0.00077 ***
+## (Intercept)     3.58723    0.09865   36.36  < 2e-16 ***
+## age            -0.00992    0.00244   -4.06  6.4e-05 ***
+## shotVaccinated  0.21829    0.06177    3.53  0.00048 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2323)
+## (Dispersion parameter for gaussian family taken to be 0.2318)
 ## 
-##     Null deviance: 67.261  on 270  degrees of freedom
-## Residual deviance: 62.249  on 268  degrees of freedom
-## AIC: 378.4
+##     Null deviance: 68.041  on 272  degrees of freedom
+## Residual deviance: 62.595  on 270  degrees of freedom
+## AIC: 380.7
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1058,23 +1057,23 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.4651  -0.3285   0.0561   0.3296   2.4023  
+## -2.4648  -0.3277   0.0514   0.3390   2.4037  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.28820    0.21304    6.05  5.1e-09 ***
-## age                 0.00636    0.00573    1.11     0.27    
-## shotVaccinated      0.30454    0.28297    1.08     0.28    
-## age:shotVaccinated -0.00497    0.00716   -0.69     0.49    
+## (Intercept)         1.32850    0.21074    6.30  1.2e-09 ***
+## age                 0.00498    0.00564    0.88     0.38    
+## shotVaccinated      0.26120    0.28051    0.93     0.35    
+## age:shotVaccinated -0.00353    0.00707   -0.50     0.62    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.4448)
+## (Dispersion parameter for gaussian family taken to be 0.4445)
 ## 
-##     Null deviance: 117.89  on 264  degrees of freedom
-## Residual deviance: 116.11  on 261  degrees of freedom
+##     Null deviance: 118.61  on 266  degrees of freedom
+## Residual deviance: 116.89  on 263  degrees of freedom
 ##   (6 observations deleted due to missingness)
-## AIC: 543.4
+## AIC: 547.2
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1086,22 +1085,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.4747  -0.3166   0.0391   0.3448   2.4266  
+## -2.4718  -0.3204   0.0446   0.3473   2.4212  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.40069    0.13807   10.14   <2e-16 ***
-## age             0.00318    0.00343    0.93     0.36    
-## shotVaccinated  0.11770    0.08687    1.35     0.18    
+## (Intercept)     1.40817    0.13752   10.24   <2e-16 ***
+## age             0.00274    0.00340    0.81     0.42    
+## shotVaccinated  0.12791    0.08616    1.48     0.14    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.444)
+## (Dispersion parameter for gaussian family taken to be 0.4432)
 ## 
-##     Null deviance: 117.89  on 264  degrees of freedom
-## Residual deviance: 116.32  on 262  degrees of freedom
+##     Null deviance: 118.61  on 266  degrees of freedom
+## Residual deviance: 117.00  on 264  degrees of freedom
 ##   (6 observations deleted due to missingness)
-## AIC: 541.8
+## AIC: 545.4
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1113,21 +1112,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.4576  -0.3127   0.0413   0.3483   2.3833  
+## -2.4569  -0.3145   0.0414   0.3445   2.3840  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      1.5130     0.0660   22.94   <2e-16 ***
-## shotVaccinated   0.1377     0.0841    1.64      0.1    
+## (Intercept)      1.5056     0.0656   22.97   <2e-16 ***
+## shotVaccinated   0.1444     0.0836    1.73    0.085 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.4437)
+## (Dispersion parameter for gaussian family taken to be 0.4426)
 ## 
-##     Null deviance: 117.89  on 264  degrees of freedom
-## Residual deviance: 116.70  on 263  degrees of freedom
+##     Null deviance: 118.61  on 266  degrees of freedom
+## Residual deviance: 117.29  on 265  degrees of freedom
 ##   (6 observations deleted due to missingness)
-## AIC: 540.7
+## AIC: 544.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1139,21 +1138,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -2.4384  -0.3344   0.0546   0.3292   2.4849  
+## -2.4318  -0.3291   0.0495   0.3279   2.4840  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  1.42760    0.13685    10.4   <2e-16 ***
-## age          0.00434    0.00333     1.3     0.19    
+## (Intercept)  1.43970    0.13618   10.57   <2e-16 ***
+## age          0.00394    0.00331    1.19     0.24    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.4454)
+## (Dispersion parameter for gaussian family taken to be 0.4452)
 ## 
-##     Null deviance: 117.89  on 264  degrees of freedom
-## Residual deviance: 117.13  on 263  degrees of freedom
+##     Null deviance: 118.61  on 266  degrees of freedom
+## Residual deviance: 117.98  on 265  degrees of freedom
 ##   (6 observations deleted due to missingness)
-## AIC: 541.7
+## AIC: 545.6
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1169,22 +1168,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.2335  -0.3427  -0.0216   0.2751   1.3736  
+## -1.2326  -0.3418  -0.0208   0.2794   1.3767  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.07372    0.15304    7.02  1.9e-11 ***
-## age                 0.00921    0.00413    2.23    0.026 *  
-## shotVaccinated      0.03848    0.20252    0.19    0.849    
-## age:shotVaccinated  0.00618    0.00514    1.20    0.231    
+## (Intercept)         1.08812    0.15153    7.18  6.8e-12 ***
+## age                 0.00872    0.00406    2.15    0.033 *  
+## shotVaccinated      0.00520    0.20097    0.03    0.979    
+## age:shotVaccinated  0.00703    0.00508    1.38    0.168    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2314)
+## (Dispersion parameter for gaussian family taken to be 0.2317)
 ## 
-##     Null deviance: 76.732  on 270  degrees of freedom
-## Residual deviance: 61.791  on 267  degrees of freedom
-## AIC: 378.4
+##     Null deviance: 77.389  on 272  degrees of freedom
+## Residual deviance: 62.326  on 269  degrees of freedom
+## AIC: 381.5
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1196,21 +1195,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.3121  -0.3283  -0.0367   0.2610   1.3791  
+## -1.3085  -0.3280  -0.0335   0.2644   1.3831  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     0.93334    0.09895    9.43  < 2e-16 ***
-## age             0.01319    0.00246    5.36  1.8e-07 ***
-## shotVaccinated  0.27011    0.06221    4.34  2.0e-05 ***
+## (Intercept)     0.92891    0.09879    9.40  < 2e-16 ***
+## age             0.01321    0.00245    5.40  1.5e-07 ***
+## shotVaccinated  0.26984    0.06185    4.36  1.8e-05 ***
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2318)
+## (Dispersion parameter for gaussian family taken to be 0.2325)
 ## 
-##     Null deviance: 76.732  on 270  degrees of freedom
-## Residual deviance: 62.125  on 268  degrees of freedom
-## AIC: 377.9
+##     Null deviance: 77.389  on 272  degrees of freedom
+## Residual deviance: 62.770  on 270  degrees of freedom
+## AIC: 381.4
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1226,22 +1225,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.5138  -0.1838   0.0037   0.1827   1.0110  
+## -1.5249  -0.1917  -0.0046   0.1854   1.0107  
 ## 
 ## Coefficients:
 ##                     Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.782908   0.089201   19.99   <2e-16 ***
-## age                -0.003791   0.002406   -1.58     0.12    
-## shotVaccinated     -0.009910   0.118043   -0.08     0.93    
-## age:shotVaccinated  0.000318   0.002997    0.11     0.92    
+## (Intercept)         1.761111   0.088516   19.90   <2e-16 ***
+## age                -0.003045   0.002372   -1.28     0.20    
+## shotVaccinated      0.005758   0.117391    0.05     0.96    
+## age:shotVaccinated -0.000311   0.002969   -0.10     0.92    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07863)
+## (Dispersion parameter for gaussian family taken to be 0.07906)
 ## 
-##     Null deviance: 21.512  on 270  degrees of freedom
-## Residual deviance: 20.993  on 267  degrees of freedom
-## AIC: 85.87
+##     Null deviance: 21.718  on 272  degrees of freedom
+## Residual deviance: 21.267  on 269  degrees of freedom
+## AIC: 87.95
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1253,21 +1252,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.5156  -0.1824   0.0025   0.1819   1.0125  
+## -1.5232  -0.1912  -0.0003   0.1847   1.0092  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.77568    0.05752   30.87   <2e-16 ***
-## age            -0.00359    0.00143   -2.50    0.013 *  
-## shotVaccinated  0.00202    0.03616    0.06    0.955    
+## (Intercept)     1.76816    0.05750   30.75   <2e-16 ***
+## age            -0.00324    0.00142   -2.28    0.024 *  
+## shotVaccinated -0.00596    0.03600   -0.17    0.869    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07834)
+## (Dispersion parameter for gaussian family taken to be 0.07877)
 ## 
-##     Null deviance: 21.512  on 270  degrees of freedom
-## Residual deviance: 20.994  on 268  degrees of freedom
-## AIC: 83.88
+##     Null deviance: 21.718  on 272  degrees of freedom
+## Residual deviance: 21.267  on 270  degrees of freedom
+## AIC: 85.96
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1279,20 +1278,20 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.5169  -0.1827   0.0034   0.1824   1.0130  
+## -1.5192  -0.1936   0.0016   0.1841   1.0078  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  1.77615    0.05679   31.28   <2e-16 ***
-## age         -0.00357    0.00138   -2.58    0.011 *  
+## (Intercept)  1.76666    0.05668   31.17   <2e-16 ***
+## age         -0.00330    0.00138   -2.39    0.018 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07805)
+## (Dispersion parameter for gaussian family taken to be 0.07849)
 ## 
-##     Null deviance: 21.512  on 270  degrees of freedom
-## Residual deviance: 20.994  on 269  degrees of freedom
-## AIC: 81.89
+##     Null deviance: 21.718  on 272  degrees of freedom
+## Residual deviance: 21.270  on 271  degrees of freedom
+## AIC: 83.99
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1308,22 +1307,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1667  -0.1626   0.0067   0.1755   0.5875  
+## -1.1668  -0.1605   0.0079   0.1750   0.5868  
 ## 
 ## Coefficients:
-##                     Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         1.267606   0.087276   14.52   <2e-16 ***
-## age                 0.001476   0.002354    0.63     0.53    
-## shotVaccinated     -0.058922   0.115495   -0.51     0.61    
-## age:shotVaccinated -0.000506   0.002932   -0.17     0.86    
+##                    Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)         1.27681    0.08618   14.82   <2e-16 ***
+## age                 0.00116    0.00231    0.50     0.62    
+## shotVaccinated     -0.06398    0.11429   -0.56     0.58    
+## age:shotVaccinated -0.00027    0.00289   -0.09     0.93    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07527)
+## (Dispersion parameter for gaussian family taken to be 0.07494)
 ## 
-##     Null deviance: 20.468  on 270  degrees of freedom
-## Residual deviance: 20.097  on 267  degrees of freedom
-## AIC: 74.04
+##     Null deviance: 20.497  on 272  degrees of freedom
+## Residual deviance: 20.158  on 269  degrees of freedom
+## AIC: 73.34
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1335,21 +1334,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1688  -0.1622   0.0059   0.1777   0.5848  
+## -1.1679  -0.1594   0.0075   0.1745   0.5854  
 ## 
 ## Coefficients:
-##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     1.27910    0.05628   22.73   <2e-16 ***
-## age             0.00115    0.00140    0.82    0.412    
-## shotVaccinated -0.07789    0.03538   -2.20    0.029 *  
+##                 Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)     1.282920   0.055985   22.92   <2e-16 ***
+## age             0.000989   0.001386    0.71    0.476    
+## shotVaccinated -0.074131   0.035054   -2.11    0.035 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.075)
+## (Dispersion parameter for gaussian family taken to be 0.07466)
 ## 
-##     Null deviance: 20.468  on 270  degrees of freedom
-## Residual deviance: 20.099  on 268  degrees of freedom
-## AIC: 72.07
+##     Null deviance: 20.497  on 272  degrees of freedom
+## Residual deviance: 20.159  on 270  degrees of freedom
+## AIC: 71.35
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1361,20 +1360,20 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1759  -0.1593   0.0124   0.1742   0.5780  
+## -1.1743  -0.1590   0.0132   0.1742   0.5772  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      1.3196     0.0270   48.94   <2e-16 ***
-## shotVaccinated  -0.0707     0.0343   -2.06     0.04 *  
+## (Intercept)      1.3180     0.0268    49.2   <2e-16 ***
+## shotVaccinated  -0.0682     0.0340    -2.0    0.046 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07491)
+## (Dispersion parameter for gaussian family taken to be 0.07453)
 ## 
-##     Null deviance: 20.468  on 270  degrees of freedom
-## Residual deviance: 20.150  on 269  degrees of freedom
-## AIC: 70.75
+##     Null deviance: 20.497  on 272  degrees of freedom
+## Residual deviance: 20.197  on 271  degrees of freedom
+## AIC: 69.87
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1386,20 +1385,20 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1283  -0.1631  -0.0046   0.1922   0.6238  
+## -1.1291  -0.1625  -0.0041   0.1879   0.6228  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept) 1.260854   0.056064   22.49   <2e-16 ***
-## age         0.000383   0.001367    0.28     0.78    
+## (Intercept) 1.264250   0.055637   22.72   <2e-16 ***
+## age         0.000294   0.001355    0.22     0.83    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.07607)
+## (Dispersion parameter for gaussian family taken to be 0.07562)
 ## 
-##     Null deviance: 20.468  on 270  degrees of freedom
-## Residual deviance: 20.462  on 269  degrees of freedom
-## AIC: 74.93
+##     Null deviance: 20.497  on 272  degrees of freedom
+## Residual deviance: 20.493  on 271  degrees of freedom
+## AIC: 73.84
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1415,22 +1414,22 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.0535  -0.3436  -0.0355   0.2662   1.5016  
+## -1.0532  -0.3413  -0.0355   0.2635   1.5024  
 ## 
 ## Coefficients:
 ##                    Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)         2.50812    0.14551   17.24   <2e-16 ***
-## age                -0.00933    0.00392   -2.38    0.018 *  
-## shotVaccinated     -0.10581    0.19256   -0.55    0.583    
-## age:shotVaccinated  0.00631    0.00489    1.29    0.198    
+## (Intercept)         2.50951    0.14358   17.48   <2e-16 ***
+## age                -0.00938    0.00385   -2.44    0.015 *  
+## shotVaccinated     -0.11583    0.19042   -0.61    0.543    
+## age:shotVaccinated  0.00653    0.00482    1.36    0.177    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2092)
+## (Dispersion parameter for gaussian family taken to be 0.208)
 ## 
-##     Null deviance: 57.883  on 270  degrees of freedom
-## Residual deviance: 55.865  on 267  degrees of freedom
-## AIC: 351.1
+##     Null deviance: 58.020  on 272  degrees of freedom
+## Residual deviance: 55.957  on 269  degrees of freedom
+## AIC: 352.1
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1442,21 +1441,21 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.0525  -0.3496  -0.0331   0.2807   1.5161  
+## -1.0513  -0.3413  -0.0318   0.2798   1.5178  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)     2.36470    0.09412   25.12   <2e-16 ***
-## age            -0.00526    0.00234   -2.25    0.025 *  
-## shotVaccinated  0.13084    0.05918    2.21    0.028 *  
+## (Intercept)     2.36180    0.09359   25.23   <2e-16 ***
+## age            -0.00521    0.00232   -2.25    0.025 *  
+## shotVaccinated  0.12971    0.05860    2.21    0.028 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2098)
+## (Dispersion parameter for gaussian family taken to be 0.2087)
 ## 
-##     Null deviance: 57.883  on 270  degrees of freedom
-## Residual deviance: 56.214  on 268  degrees of freedom
-## AIC: 350.8
+##     Null deviance: 58.020  on 272  degrees of freedom
+## Residual deviance: 56.339  on 270  degrees of freedom
+## AIC: 351.9
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1468,20 +1467,20 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1282  -0.3394  -0.0353   0.2878   1.5545  
+## -1.1265  -0.3375  -0.0435   0.2885   1.5565  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)  2.39535    0.09377   25.55   <2e-16 ***
-## age         -0.00398    0.00229   -1.74    0.083 .  
+## (Intercept)  2.39447    0.09308   25.72   <2e-16 ***
+## age         -0.00400    0.00227   -1.76    0.079 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2128)
+## (Dispersion parameter for gaussian family taken to be 0.2117)
 ## 
-##     Null deviance: 57.883  on 270  degrees of freedom
-## Residual deviance: 57.239  on 269  degrees of freedom
-## AIC: 353.7
+##     Null deviance: 58.020  on 272  degrees of freedom
+## Residual deviance: 57.362  on 271  degrees of freedom
+## AIC: 354.8
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1493,20 +1492,20 @@ intercept to zero.
 ## 
 ## Deviance Residuals: 
 ##     Min       1Q   Median       3Q      Max  
-## -1.1201  -0.3380  -0.0279   0.2776   1.4821  
+## -1.1179  -0.3343  -0.0283   0.2697   1.4837  
 ## 
 ## Coefficients:
 ##                Estimate Std. Error t value Pr(>|t|)    
-## (Intercept)      2.1791     0.0455   47.93   <2e-16 ***
-## shotVaccinated   0.0978     0.0577    1.69    0.092 .  
+## (Intercept)      2.1769     0.0451   48.24   <2e-16 ***
+## shotVaccinated   0.0985     0.0574    1.72    0.087 .  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
 ## 
-## (Dispersion parameter for gaussian family taken to be 0.2129)
+## (Dispersion parameter for gaussian family taken to be 0.2118)
 ## 
-##     Null deviance: 57.883  on 270  degrees of freedom
-## Residual deviance: 57.273  on 269  degrees of freedom
-## AIC: 353.9
+##     Null deviance: 58.020  on 272  degrees of freedom
+## Residual deviance: 57.396  on 271  degrees of freedom
+## AIC: 355
 ## 
 ## Number of Fisher Scoring iterations: 2
 ```
@@ -1514,3 +1513,5 @@ intercept to zero.
 
 
 [1]: http://r-eco-evo.blogspot.ch/2011/08/comparing-two-regression-slopes-by.html
+
+#### _Latest update: 26 November 2013_.

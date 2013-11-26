@@ -175,8 +175,7 @@ summary(fit_1)
 ### EC50
 
 <a id="ec50h1pdm09"></a>
-#### H1 pandemic 2009: both shot and age without interaction, but almost
-the shot alone
+#### H1 pandemic 2009: both shot and age without interaction
 ```{r ec_slopes_h1pdm09}
 fit_1 <- glm(H1_pdm09_log ~ age * shot, data=ec_data)
 summary(fit_1)
@@ -300,3 +299,5 @@ summary(fit_1)
 
 
 [1]: http://r-eco-evo.blogspot.ch/2011/08/comparing-two-regression-slopes-by.html
+
+#### _Latest update: 26 November 2013_.

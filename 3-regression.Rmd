@@ -110,4 +110,4 @@ plot_antibody(ic_ec_data, "delta_H2", smooth_method="loess")
 plot_antibody(ic_ec_data, "delta_H4", smooth_method="loess")
 ```
 
-## _Latest update: 6 May 2013_.
+#### _Latest update: 26 November 2013_.

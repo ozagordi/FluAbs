@@ -136,4 +136,4 @@ summary(fit_all)
 
 
 <a id="done_stata"></a>
-## 
+#### _Latest update: 26 November 2013_.
