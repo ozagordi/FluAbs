@@ -20,7 +20,7 @@
   
   [H12](#ec50h12)
 
-* [No effects](#noeff)
+* [No effects](#median-and-iqr-where-no-effect-was-found)
 
 ----
 
@@ -1516,15 +1516,15 @@ intercept to zero.
 
 
 
-<a id="noeff"></a>
-### Means and SD where no effect was found
+<a id="#median-and-iqr-where-no-effect-was-found"></a>
+### Median and IQR where no effect was found
 
 ```
 ## [1] "EC50; H4"
 ```
 
 ```
-## [1] "1.594 +/- 0.668"
+## [1] "1.625 +/- 0.682"
 ```
 
 ```
@@ -1532,7 +1532,7 @@ intercept to zero.
 ```
 
 ```
-## [1] "1.637 +/- 0.283"
+## [1] "1.645 +/- 0.362"
 ```
 
 ```
@@ -1540,7 +1540,7 @@ intercept to zero.
 ```
 
 ```
-## [1] "1.276 +/- 0.275"
+## [1] "1.273 +/- 0.352"
 ```
 
 ```
@@ -1548,7 +1548,7 @@ intercept to zero.
 ```
 
 ```
-## [1] "2.238 +/- 0.462"
+## [1] "2.215 +/- 0.619"
 ```
 
 ```
@@ -1556,7 +1556,7 @@ intercept to zero.
 ```
 
 ```
-## [1] "14.033 +/- 12.147"
+## [1] "11.500 +/- 17.500"
 ```
 
 

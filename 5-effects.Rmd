@@ -26,7 +26,7 @@ load("ic_ec.Rdata")
   
   [H12](#ec50h12)
 
-* [No effects](#noeff)
+* [No effects](#median-and-iqr-where-no-effect-was-found)
 
 ----
 
@@ -302,37 +302,37 @@ summary(fit_1)
 ```
 
 
-<a id="noeff"></a>
-### Means and SD where no effect was found
+<a id="#median-and-iqr-where-no-effect-was-found"></a>
+### Median and IQR where no effect was found
 ```{r no_eff}
 print("EC50; H4")
 xyz <- ec_data$H4_log
-m <- mean(xyz, na.rm=TRUE)
-s <- sd(xyz, na.rm=TRUE)
+m <- median(xyz, na.rm=TRUE)
+s <- IQR(xyz, na.rm=TRUE)
 sprintf("%5.3f +/- %5.3f", m, s)
 
 print("EC50; H7")
 xyz <- ec_data$H7_log
-m <- mean(xyz, na.rm=TRUE)
-s <- sd(xyz, na.rm=TRUE)
+m <- median(xyz, na.rm=TRUE)
+s <- IQR(xyz, na.rm=TRUE)
 sprintf("%5.3f +/- %5.3f", m, s)
 
 print("EC50; H7_vir")
 xyz <- ec_data$H7_vir_log
-m <- mean(xyz, na.rm=TRUE)
-s <- sd(xyz, na.rm=TRUE)
+m <- median(xyz, na.rm=TRUE)
+s <- IQR(xyz, na.rm=TRUE)
 sprintf("%5.3f +/- %5.3f", m, s)
 
 print("EC50; H12")
 xyz <- ec_data$H12_log
-m <- mean(xyz, na.rm=TRUE)
-s <- sd(xyz, na.rm=TRUE)
+m <- median(xyz, na.rm=TRUE)
+s <- IQR(xyz, na.rm=TRUE)
 sprintf("%5.3f +/- %5.3f", m, s)
 
 print("IC50; H7_1st_dil_percent")
 xyz <- ic_data$H7_1st_dil_percent
-m <- mean(xyz, na.rm=TRUE)
-s <- sd(xyz, na.rm=TRUE)
+m <- median(xyz, na.rm=TRUE)
+s <- IQR(xyz, na.rm=TRUE)
 sprintf("%5.3f +/- %5.3f", m, s)
 ```
 
