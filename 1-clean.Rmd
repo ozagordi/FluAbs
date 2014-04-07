@@ -20,7 +20,7 @@ dataframes, one for IC50 values and one for the EC50 values.
 
 ```{r load_data, echo=FALSE, warning=FALSE}
 library(plyr)
-library(reshape)
+library(reshape2)
 # donors data
 donors_view <- read.csv("../../data/donors_view.csv", sep=";", quote="\"",
                           header=TRUE, na.strings=c("NULL"))
@@ -40,11 +40,11 @@ dim(donors_view)
 # EC data
 filenames <- list.files(path="../../data/data_to_merge_EC50/", full.names=TRUE)
 import.list <- llply(filenames, read.csv, sep=";")
-ec_data <- merge_recurse(import.list, by="donorID")
+ec_data <- Reduce(function(...) merge(..., by="donorID"), import.list)
 # IC data
 filenames <- list.files(path="../../data/data_to_merge_IC50/", full.names=TRUE)
 import.list <- llply(filenames, read.csv, sep=";")
-ic_data <- merge_recurse(import.list, by="donorID")
+ic_data <- Reduce(function(...) merge(..., by="donorID"), import.list)
 ```
 
 The age distribution per gender is shown in the next plot.
@@ -198,4 +198,4 @@ save(ic_data, ec_data, file="ic_ec.Rdata")
 ```
 ----
 
-#### _Latest update: 26 November 2013_.
+#### _Latest update: 7 April 2014_.

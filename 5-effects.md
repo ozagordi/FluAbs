@@ -19,7 +19,9 @@
   [H4](#ec50h4) [H5](#ec50h5) [H7](#ec50h7) [H7 virus](#ec50h7vir)
   
   [H12](#ec50h12)
-  
+
+* [No effects](#noeff)
+
 ----
 
 Effect of seniority and vaccinations
@@ -53,10 +55,12 @@ A slow-paced discussion of ANCOVA can be found in this [blog post][1].
 
 <a id="ic50"></a>
 ### IC50
+
 <a id="ic50h1brisbane"></a>
 #### H1 Brisbane: shot only
 For H1 Brisbane, we remove first the interaction term and then also the age,
 concluding that only the vaccinations are contributing to the antibody titer.
+
 
 ```
 ## 
@@ -74,7 +78,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## shotVaccinated      0.99266    0.29164    3.40  0.00078 ***
 ## age:shotVaccinated -0.01147    0.00749   -1.53  0.12706    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4203)
 ## 
@@ -101,7 +105,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## age            -0.00585    0.00352   -1.66    0.097 .  
 ## shotVaccinated  0.56757    0.08946    6.34  1.1e-09 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4226)
 ## 
@@ -127,7 +131,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## (Intercept)      2.3501     0.0699    33.6  < 2e-16 ***
 ## shotVaccinated   0.5290     0.0867     6.1  4.1e-09 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4256)
 ## 
@@ -159,7 +163,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## shotVaccinated      0.03979    0.17836    0.22     0.82    
 ## age:shotVaccinated  0.00371    0.00453    0.82     0.41    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1676)
 ## 
@@ -186,7 +190,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## age             0.00499    0.00215    2.32   0.0209 *  
 ## shotVaccinated  0.17867    0.05449    3.28   0.0012 ** 
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1673)
 ## 
@@ -212,7 +216,7 @@ concluding that only the vaccinations are contributing to the antibody titer.
 ## (Intercept)      2.9286     0.0426   68.82  < 2e-16 ***
 ## shotVaccinated   0.2094     0.0533    3.93  0.00011 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1702)
 ## 
@@ -249,7 +253,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated     -0.52000    0.15825   -3.29   0.0012 ** 
 ## age:shotVaccinated  0.01082    0.00397    2.72   0.0069 ** 
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1384)
 ## 
@@ -276,7 +280,7 @@ full, noint and age only. So we should choose age only.
 ## age             0.02709    0.00193   14.03   <2e-16 ***
 ## shotVaccinated -0.10996    0.04898   -2.25    0.026 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1417)
 ## 
@@ -302,7 +306,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)  1.52469    0.07817    19.5   <2e-16 ***
 ## age          0.02608    0.00189    13.8   <2e-16 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1439)
 ## 
@@ -334,7 +338,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated      0.01827    0.27011    0.07     0.95    
 ## age:shotVaccinated  0.00564    0.00685    0.82     0.41    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.3894)
 ## 
@@ -361,7 +365,7 @@ full, noint and age only. So we should choose age only.
 ## age            0.000506   0.003284    0.15   0.8777    
 ## shotVaccinated 0.229615   0.083511    2.75   0.0064 ** 
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.3889)
 ## 
@@ -387,7 +391,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)      2.4811     0.0645   38.45   <2e-16 ***
 ## shotVaccinated   0.2325     0.0812    2.86   0.0046 ** 
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.3873)
 ## 
@@ -419,7 +423,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated      0.02026    0.19995    0.10     0.92    
 ## age:shotVaccinated -0.00082    0.00502   -0.16     0.87    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2201)
 ## 
@@ -446,7 +450,7 @@ full, noint and age only. So we should choose age only.
 ## age              0.0276     0.0024   11.53   <2e-16 ***
 ## shotVaccinated  -0.0109     0.0611   -0.18     0.86    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2193)
 ## 
@@ -472,7 +476,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)  1.63848    0.09649    17.0   <2e-16 ***
 ## age          0.02754    0.00233    11.8   <2e-16 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2185)
 ## 
@@ -504,7 +508,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated     -0.06722    0.12629   -0.53     0.60    
 ## age:shotVaccinated  0.00263    0.00314    0.84     0.40    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07996)
 ## 
@@ -531,7 +535,7 @@ full, noint and age only. So we should choose age only.
 ## age            0.000296   0.001507    0.20     0.84    
 ## shotVaccinated 0.033313   0.038292    0.87     0.39    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07986)
 ## 
@@ -557,7 +561,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)      1.9439     0.0296   65.75   <2e-16 ***
 ## shotVaccinated   0.0350     0.0372    0.94     0.35    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07955)
 ## 
@@ -613,7 +617,7 @@ full, noint and age only. So we should choose age only.
 ## age              0.0249     0.0541    0.46    0.645  
 ## shotVaccinated   3.3861     1.3672    2.48    0.014 *
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 113.6)
 ## 
@@ -638,7 +642,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)        1.42       1.04    1.36   0.1738   
 ## shotVaccinated     3.54       1.33    2.67   0.0081 **
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 113.2)
 ## 
@@ -669,7 +673,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated      -6.9838     5.0459   -1.38  0.16749    
 ## age:shotVaccinated   0.1474     0.1276    1.16  0.24910    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 146.1)
 ## 
@@ -695,7 +699,7 @@ full, noint and age only. So we should choose age only.
 ## age              0.1256     0.0614    2.05    0.042 *  
 ## shotVaccinated  -1.4375     1.5514   -0.93    0.355    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 146.3)
 ## 
@@ -720,7 +724,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)   9.6399     2.4462    3.94   0.0001 ***
 ## age           0.1121     0.0596    1.88   0.0609 .  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 146.2)
 ## 
@@ -754,7 +758,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated      0.00857    0.13216    0.06     0.95    
 ## age:shotVaccinated  0.00432    0.00334    1.30     0.20    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.09922)
 ## 
@@ -781,7 +785,7 @@ full, noint and age only. So we should choose age only.
 ## age             0.00512    0.00160    3.19   0.0016 ** 
 ## shotVaccinated  0.17157    0.04053    4.23  3.2e-05 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.09947)
 ## 
@@ -807,7 +811,7 @@ full, noint and age only. So we should choose age only.
 ## (Intercept)      1.3670     0.0316   43.26   <2e-16 ***
 ## shotVaccinated   0.2016     0.0401    5.03    9e-07 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1029)
 ## 
@@ -839,7 +843,7 @@ full, noint and age only. So we should choose age only.
 ## shotVaccinated      0.367045   0.135550    2.71   0.0072 ** 
 ## age:shotVaccinated -0.000979   0.003428   -0.29   0.7754    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1054)
 ## 
@@ -865,7 +869,7 @@ full, noint and age only. So we should choose age only.
 ## age             0.00827    0.00164    5.03  9.0e-07 ***
 ## shotVaccinated  0.33021    0.04158    7.94  5.4e-14 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.1051)
 ## 
@@ -899,7 +903,7 @@ intercept to zero.
 ## shotVaccinated     -0.43695    0.21926   -1.99    0.047 *  
 ## age:shotVaccinated  0.01166    0.00553    2.11    0.036 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.272)
 ## 
@@ -926,7 +930,7 @@ intercept to zero.
 ## age             0.03194    0.00267   11.96   <2e-16 ***
 ## shotVaccinated  0.00287    0.06767    0.04     0.97    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2755)
 ## 
@@ -952,7 +956,7 @@ intercept to zero.
 ## (Intercept)  -0.1270     0.1067   -1.19     0.23    
 ## age           0.0320     0.0026   12.32   <2e-16 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2745)
 ## 
@@ -977,7 +981,7 @@ intercept to zero.
 ##     Estimate Std. Error t value Pr(>|t|)    
 ## age 0.029016   0.000776    37.4   <2e-16 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2749)
 ## 
@@ -1009,7 +1013,7 @@ intercept to zero.
 ## shotVaccinated     -0.11842    0.20024   -0.59  0.55477    
 ## age:shotVaccinated  0.00895    0.00506    1.77  0.07836 .  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.23)
 ## 
@@ -1035,7 +1039,7 @@ intercept to zero.
 ## age            -0.00992    0.00244   -4.06  6.4e-05 ***
 ## shotVaccinated  0.21829    0.06177    3.53  0.00048 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2318)
 ## 
@@ -1066,7 +1070,7 @@ intercept to zero.
 ## shotVaccinated      0.26120    0.28051    0.93     0.35    
 ## age:shotVaccinated -0.00353    0.00707   -0.50     0.62    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4445)
 ## 
@@ -1093,7 +1097,7 @@ intercept to zero.
 ## age             0.00274    0.00340    0.81     0.42    
 ## shotVaccinated  0.12791    0.08616    1.48     0.14    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4432)
 ## 
@@ -1119,7 +1123,7 @@ intercept to zero.
 ## (Intercept)      1.5056     0.0656   22.97   <2e-16 ***
 ## shotVaccinated   0.1444     0.0836    1.73    0.085 .  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4426)
 ## 
@@ -1145,7 +1149,7 @@ intercept to zero.
 ## (Intercept)  1.43970    0.13618   10.57   <2e-16 ***
 ## age          0.00394    0.00331    1.19     0.24    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.4452)
 ## 
@@ -1177,7 +1181,7 @@ intercept to zero.
 ## shotVaccinated      0.00520    0.20097    0.03    0.979    
 ## age:shotVaccinated  0.00703    0.00508    1.38    0.168    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2317)
 ## 
@@ -1203,7 +1207,7 @@ intercept to zero.
 ## age             0.01321    0.00245    5.40  1.5e-07 ***
 ## shotVaccinated  0.26984    0.06185    4.36  1.8e-05 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2325)
 ## 
@@ -1234,7 +1238,7 @@ intercept to zero.
 ## shotVaccinated      0.005758   0.117391    0.05     0.96    
 ## age:shotVaccinated -0.000311   0.002969   -0.10     0.92    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07906)
 ## 
@@ -1260,7 +1264,7 @@ intercept to zero.
 ## age            -0.00324    0.00142   -2.28    0.024 *  
 ## shotVaccinated -0.00596    0.03600   -0.17    0.869    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07877)
 ## 
@@ -1285,7 +1289,7 @@ intercept to zero.
 ## (Intercept)  1.76666    0.05668   31.17   <2e-16 ***
 ## age         -0.00330    0.00138   -2.39    0.018 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07849)
 ## 
@@ -1316,7 +1320,7 @@ intercept to zero.
 ## shotVaccinated     -0.06398    0.11429   -0.56     0.58    
 ## age:shotVaccinated -0.00027    0.00289   -0.09     0.93    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07494)
 ## 
@@ -1342,7 +1346,7 @@ intercept to zero.
 ## age             0.000989   0.001386    0.71    0.476    
 ## shotVaccinated -0.074131   0.035054   -2.11    0.035 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07466)
 ## 
@@ -1367,7 +1371,7 @@ intercept to zero.
 ## (Intercept)      1.3180     0.0268    49.2   <2e-16 ***
 ## shotVaccinated  -0.0682     0.0340    -2.0    0.046 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07453)
 ## 
@@ -1392,7 +1396,7 @@ intercept to zero.
 ## (Intercept) 1.264250   0.055637   22.72   <2e-16 ***
 ## age         0.000294   0.001355    0.22     0.83    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.07562)
 ## 
@@ -1423,7 +1427,7 @@ intercept to zero.
 ## shotVaccinated     -0.11583    0.19042   -0.61    0.543    
 ## age:shotVaccinated  0.00653    0.00482    1.36    0.177    
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.208)
 ## 
@@ -1449,7 +1453,7 @@ intercept to zero.
 ## age            -0.00521    0.00232   -2.25    0.025 *  
 ## shotVaccinated  0.12971    0.05860    2.21    0.028 *  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2087)
 ## 
@@ -1474,7 +1478,7 @@ intercept to zero.
 ## (Intercept)  2.39447    0.09308   25.72   <2e-16 ***
 ## age         -0.00400    0.00227   -1.76    0.079 .  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2117)
 ## 
@@ -1499,7 +1503,7 @@ intercept to zero.
 ## (Intercept)      2.1769     0.0451   48.24   <2e-16 ***
 ## shotVaccinated   0.0985     0.0574    1.72    0.087 .  
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 0.2118)
 ## 
@@ -1512,6 +1516,50 @@ intercept to zero.
 
 
 
+<a id="noeff"></a>
+### Means and SD where no effect was found
+
+```
+## [1] "EC50; H4"
+```
+
+```
+## [1] "1.594 +/- 0.668"
+```
+
+```
+## [1] "EC50; H7"
+```
+
+```
+## [1] "1.637 +/- 0.283"
+```
+
+```
+## [1] "EC50; H7_vir"
+```
+
+```
+## [1] "1.276 +/- 0.275"
+```
+
+```
+## [1] "EC50; H12"
+```
+
+```
+## [1] "2.238 +/- 0.462"
+```
+
+```
+## [1] "IC50; H7_1st_dil_percent"
+```
+
+```
+## [1] "14.033 +/- 12.147"
+```
+
+
 [1]: http://r-eco-evo.blogspot.ch/2011/08/comparing-two-regression-slopes-by.html
 
-#### _Latest update: 26 November 2013_.
+#### _Latest update: 07 April 2014_.

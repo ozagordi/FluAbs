@@ -48,6 +48,11 @@ IC50 for H5 and H7 are shown separately because the scale is different
 (percentage).
 
 #### IC50
+
+```
+## Error: there is no package called 'reshape'
+```
+
 ![plot of chunk ic_boxplots](figure/ic_boxplots1.png) ![plot of chunk ic_boxplots](figure/ic_boxplots2.png) 
 
 #### EC50
@@ -171,4 +176,4 @@ save(ic_data, ec_data, file = "ic_ec.Rdata")
 
 ----
 
-#### _Latest update: 26 November 2013_.
+#### _Latest update: 7 April 2014_.

@@ -25,7 +25,9 @@ load("ic_ec.Rdata")
   [H4](#ec50h4) [H5](#ec50h5) [H7](#ec50h7) [H7 virus](#ec50h7vir)
   
   [H12](#ec50h12)
-  
+
+* [No effects](#noeff)
+
 ----
 
 Effect of seniority and vaccinations
@@ -59,10 +61,12 @@ A slow-paced discussion of ANCOVA can be found in this [blog post][1].
 
 <a id="ic50"></a>
 ### IC50
+
 <a id="ic50h1brisbane"></a>
 #### H1 Brisbane: shot only
 For H1 Brisbane, we remove first the interaction term and then also the age,
 concluding that only the vaccinations are contributing to the antibody titer.
+
 ```{r ic_slopes_H1_brisbane}
 fit_1 <- glm(H1_brisbane_log ~ age * shot, data=ic_data)
 summary(fit_1)
@@ -298,6 +302,40 @@ summary(fit_1)
 ```
 
 
+<a id="noeff"></a>
+### Means and SD where no effect was found
+```{r no_eff}
+print("EC50; H4")
+xyz <- ec_data$H4_log
+m <- mean(xyz, na.rm=TRUE)
+s <- sd(xyz, na.rm=TRUE)
+sprintf("%5.3f +/- %5.3f", m, s)
+
+print("EC50; H7")
+xyz <- ec_data$H7_log
+m <- mean(xyz, na.rm=TRUE)
+s <- sd(xyz, na.rm=TRUE)
+sprintf("%5.3f +/- %5.3f", m, s)
+
+print("EC50; H7_vir")
+xyz <- ec_data$H7_vir_log
+m <- mean(xyz, na.rm=TRUE)
+s <- sd(xyz, na.rm=TRUE)
+sprintf("%5.3f +/- %5.3f", m, s)
+
+print("EC50; H12")
+xyz <- ec_data$H12_log
+m <- mean(xyz, na.rm=TRUE)
+s <- sd(xyz, na.rm=TRUE)
+sprintf("%5.3f +/- %5.3f", m, s)
+
+print("IC50; H7_1st_dil_percent")
+xyz <- ic_data$H7_1st_dil_percent
+m <- mean(xyz, na.rm=TRUE)
+s <- sd(xyz, na.rm=TRUE)
+sprintf("%5.3f +/- %5.3f", m, s)
+```
+
 [1]: http://r-eco-evo.blogspot.ch/2011/08/comparing-two-regression-slopes-by.html
 
-#### _Latest update: 26 November 2013_.
+#### _Latest update: 07 April 2014_.
