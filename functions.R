@@ -30,7 +30,7 @@ plot_antibody <- function(ab_data, strain, smooth_method="rlm",
   # Plot with rlm smoothing, this should be equivalent to glm
   # or with loess
   p <- ggplot(data=melted, aes(x=age, y=value, color=shot))
-  p <- p + geom_point(aes(shape=shot), size=3., solid=FALSE) + geom_point(aes(shape=shot), size=4., solid=FALSE)
+  p <- p + geom_point(aes(shape=shot), size=4., solid=FALSE)# + geom_point(aes(shape=shot), size=3., solid=FALSE)
   # robust linear model
   if (!is.na(yrange)){
     p <- p + ylim(yrange)

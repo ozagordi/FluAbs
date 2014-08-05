@@ -94,21 +94,21 @@ ExportPlot(hp, "ec_h12_smooth")
 
 
 ### IC50
-```{r smooth_ic, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
-for (st in names(ic_data)[2:9]){
-  plot_cv_smoothed(ic_data, st, "Non vaccinated")
-  plot_cv_smoothed(ic_data, st, "Vaccinated")
+#```{r smooth_ic, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
+#for (st in names(ic_data)[2:9]){
+#  plot_cv_smoothed(ic_data, st, "Non vaccinated")
+#  plot_cv_smoothed(ic_data, st, "Vaccinated")
 }
-```
+#```
 
 ### EC50
-```{r smooth_ec, echo=FALSE, warning=FALSE}
-for (st in c("H1_pdm09_log", "H1_PR8_log", "H2_log", "H3_log", "H4_log",
-             "H5_log", "H7_vir_log", "H7_log", "H12_log")){
-  plot_cv_smoothed(ec_data, st, "Non vaccinated")
-  plot_cv_smoothed(ec_data, st, "Vaccinated")
-}
-```
+#```{r smooth_ec, echo=FALSE, warning=FALSE}
+#for (st in c("H1_pdm09_log", "H1_PR8_log", "H2_log", "H3_log", "H4_log",
+#             "H5_log", "H7_vir_log", "H7_log", "H12_log")){
+#  plot_cv_smoothed(ec_data, st, "Non vaccinated")
+#  plot_cv_smoothed(ec_data, st, "Vaccinated")
+#}
+#```
 
 ----
 
